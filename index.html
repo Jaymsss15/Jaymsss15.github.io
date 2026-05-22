@@ -1,27 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Portfolio</title>
+        <title>Tiago Marques | Portfolio</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+            rel="stylesheet"
+        />
         <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="mediaqueries.css" />
     </head>
     <body>
         <nav id="desktop-nav">
-            <div class="logo">Tiago Marques</div>
+            <div class="logo-wrapper">
+                <a
+                    href="https://www.youtube.com/@TiagoM_Music"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="./assets/tmlogo.png"
+                        alt="Tiago Marques Artist Logo"
+                        class="artist-logo"
+                    />
+                </a>
+            </div>
             <div>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <!-- <li><a href="#experience">Experience</a></li>-->
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#featured-plugin">ALMA Plugin</a></li>
+                    <li><a href="#projects">Other Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
+
         <nav id="hamburger-nav">
-            <div class="logo">Tiago Marques</div>
+            <div class="logo-wrapper">
+                <a
+                    href="https://www.youtube.com/@TiagoM_Music"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <img
+                        src="./assets/tmlogo.png"
+                        alt="Tiago Marques Artist Logo"
+                        class="artist-logo"
+                    />
+                </a>
+            </div>
             <div class="hamburger-menu">
                 <div class="hamburger-icon" onclick="toggleMenu()">
                     <span></span>
@@ -31,12 +61,14 @@
                 <div class="menu-links">
                     <li><a href="#about" onclick="toggleMenu()">About</a></li>
                     <li>
-                        <a href="#experience" onclick="toggleMenu()"
-                            >Experience</a
+                        <a href="#featured-plugin" onclick="toggleMenu()"
+                            >ALMA Plugin</a
                         >
                     </li>
                     <li>
-                        <a href="#projects" onclick="toggleMenu()">Projects</a>
+                        <a href="#projects" onclick="toggleMenu()"
+                            >Other Projects</a
+                        >
                     </li>
                     <li>
                         <a href="#contact" onclick="toggleMenu()">Contact</a>
@@ -44,350 +76,252 @@
                 </div>
             </div>
         </nav>
-        <section id="profile">
-            <div class="section__pic-container">
-                <img
-                    src="./assets/profile-pic.png"
-                    alt="John Doe profile picture"
-                />
-            </div>
-            <div class="section__text">
-                <p class="section__text__p1">Hello, I'm</p>
-                <h1 class="title">Tiago Marques</h1>
-                <p class="section__text__p2">Software Developer</p>
-                <div class="btn-container">
-                    <button
-                        class="btn btn-color-1"
-                        onclick="location.href='./#contact'"
-                    >
-                        Contact Info
-                    </button>
+
+        <section id="profile" class="section-container">
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h1 class="title">Tiago Marques</h1>
+                    <p class="role">Software Developer & Sound Engineer</p>
+                    <div id="socials-container">
+                        <a
+                            href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="./assets/linkedin.png"
+                                alt="LinkedIn"
+                                class="icon"
+                            />
+                        </a>
+                        <a
+                            href="https://github.com/Jaymsss15"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="./assets/github.png"
+                                alt="GitHub"
+                                class="icon"
+                            />
+                        </a>
+                    </div>
                 </div>
-                <div id="socials-container">
+                <div class="profile-pic-wrapper">
                     <img
-                        src="./assets/linkedin.png"
-                        alt="My LinkedIn profile"
-                        class="icon"
-                        onclick="location.href='https://www.linkedin.com/in/tiago-marques-789b3031b/'"
-                    />
-                    <img
-                        src="./assets/github.png"
-                        alt="My Github profile"
-                        class="icon"
-                        onclick="location.href='https://github.com/Jaymsss15'"
+                        src="./assets/profile-pic.jpeg"
+                        alt="Tiago Marques"
+                        class="profile-pic"
                     />
                 </div>
             </div>
         </section>
-        <section id="about">
-            <p class="section__text__p1">Get To Know More</p>
-            <h1 class="title">About Me</h1>
-            <div class="section-container">
-                <div class="section__pic-container">
-                    <img
-                        src="./assets/about-pic.png"
-                        alt="Profile picture"
-                        class="about-pic"
-                    />
+
+        <hr class="divider" />
+
+        <section id="about" class="section-container">
+            <p class="subtitle">Get to know more</p>
+            <h2 class="section-title">About Me</h2>
+            <div class="about-grid">
+                <div class="about-card">
+                    <h3>Education</h3>
+                    <p>
+                        <strong>MSc in Sound Design and Music Computing</strong
+                        ><br />
+                        <span style="font-size: 0.85rem; color: #71717a"
+                            >Final Year Student</span
+                        >
+                    </p>
+                    <p
+                        style="
+                            margin-top: 0.5rem;
+                            font-size: 0.9rem;
+                            color: #a1a1aa;
+                        "
+                    >
+                        BSc in Computer Science and Engineering
+                    </p>
                 </div>
-                <div class="about-details-container">
-                    <div class="about-containers">
-                        <div class="details-container">
-                            <img
-                                src="./assets/experience.png"
-                                alt="Experience icon"
-                                class="icon"
-                            />
-                            <h3>Experience</h3>
-                            <p>Internship at NeuroInova - Game Development</p>
-                        </div>
-                        <div class="details-container">
-                            <img
-                                src="./assets/education.png"
-                                alt="Education icon"
-                                class="icon"
-                            />
-                            <h3>Education</h3>
-                            <p>Bachelor's degree, Software Engineering</p>
-                        </div>
-                    </div>
-                    <div class="text-container">
-                        <p>
-                            The internship focused on modernizing games
-                            developed in CreateJS for Konva.js. Initially, a
-                            research was conducted on unit testing and tracing
-                            tools to explore technological alternatives.
-                            Subsequently, level checks and bug fixes were
-                            performed on games that had already been updated for
-                            Konva.js, followed by the addition of new levels.
-                            The final phase of the project involved the complete
-                            conversion of the games.
+
+                <div class="about-card">
+                    <h3>Experience</h3>
+                    <p>
+                        <strong>Audio & Game Development</strong><br />
+                        <span style="font-size: 0.85rem; color: #71717a"
+                            >2 Internships</span
+                        >
+                    </p>
+
+                    <div
+                        style="
+                            margin-top: 0.8rem;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.4rem;
+                        "
+                    >
+                        <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0">
+                            <span style="color: #ffffff">• Past:</span> Game Dev
+                            at NeuroInova
+                        </p>
+                        <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0">
+                            <span style="color: #ffffff">• Current:</span> Audio
+                            Plugin DSP Dev
                         </p>
                     </div>
                 </div>
-            </div>
-            <img
-                src="./assets/arrow.png"
-                alt="Arrow icon"
-                class="icon arrow"
-                onclick="location.href='./#experience'"
-            />
-        </section>
-        <!--
-        <section id="experience">
-            <p class="section__text__p1">Explore My</p>
-            <h1 class="title">Experience</h1>
-            <div class="experience-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <h2 class="experience-sub-title">
-                            Frontend Development
-                        </h2>
-                        <div class="article-container">
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>HTML</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>CSS</h3>
-                                    <p>Experienced</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>SASS</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>JavaScript</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>TypeScript</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>Material UI</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="details-container">
-                        <h2 class="experience-sub-title">
-                            Frontend Development
-                        </h2>
-                        <div class="article-container">
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>PostgreSQL</h3>
-                                    <p>Basic</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>Node JS</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>Express JS</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                            <article>
-                                <img
-                                    src="./assets/checkmark.png"
-                                    alt="Experience icon"
-                                    class="icon"
-                                />
-                                <div>
-                                    <h3>Git</h3>
-                                    <p>Intermediate</p>
-                                </div>
-                            </article>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img
-                src="./assets/arrow.png"
-                alt="Arrow icon"
-                class="icon arrow"
-                onclick="location.href='./#projects'"
-            />
-        </section>
-        -->
-        <section id="projects">
-            <p class="section__text__p1">Browse My Recent</p>
-            <h1 class="title">Projects</h1>
-            <div class="experience-details-container">
-                <div class="about-containers">
-                    <div class="details-container color-container">
-                        <div class="article-container">
-                            <img
-                                src="./assets/project-1.png"
-                                alt="Project 1"
-                                class="project-img"
-                            />
-                        </div>
-                        <h2 class="experience-sub-title project-title">
-                            Ultimate Tic-Tac-Toe
-                        </h2>
-                        <div class="btn-container">
-                            <button
-                                class="btn btn-color-2 project-btn"
-                                onclick="location.href='https://github.com/Jaymsss15/Ultimate-Tic-Tac-Toe'"
-                            >
-                                Github
-                            </button>
-                        </div>
-                    </div>
-                    <div class="details-container color-container">
-                        <div class="article-container">
-                            <img
-                                src="./assets/project-2.png"
-                                alt="Project 2"
-                                class="project-img"
-                            />
-                        </div>
-                        <h2 class="experience-sub-title project-title">
-                            Real Estate Website
-                        </h2>
-                        <div class="btn-container">
-                            <button
-                                class="btn btn-color-2 project-btn"
-                                onclick="location.href='https://github.com/Jaymsss15/Real-Estate-Website'"
-                            >
-                                Github
-                            </button>
-                        </div>
-                    </div>
-                    <div class="details-container color-container">
-                        <div class="article-container">
-                            <img
-                                src="./assets/project-3.png"
-                                alt="Project 3"
-                                class="project-img"
-                            />
-                        </div>
-                        <h2 class="experience-sub-title project-title">
-                            Animals Game
-                        </h2>
-                        <div class="btn-container">
-                            <button
-                                class="btn btn-color-2 project-btn"
-                                onclick="location.href='https://github.com/Jaymsss15/Animals-Game'"
-                            >
-                                Github
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <img
-                src="./assets/arrow.png"
-                alt="Arrow icon"
-                class="icon arrow"
-                onclick="location.href='./#contact'"
-            />
-        </section>
-        <section id="contact">
-            <h1 class="title">Contact Me</h1>
-            <div class="contact-info-upper-container">
-                <div class="contact-info-container">
-                    <img
-                        src="./assets/email.png"
-                        alt="Email icon"
-                        class="icon contact-icon email-icon"
-                    />
-                    <p>
-                        <a href="mailto:tfam7@live.com.pt">tfam7@live.com.pt</a>
+
+                <div class="about-card">
+                    <h3>Interests</h3>
+                    <p><strong>Guitarist & Music Producer </strong><br /></p>
+                    <p
+                        style="
+                            margin-top: 0.5rem;
+                            font-size: 0.9rem;
+                            color: #a1a1aa;
+                        "
+                    >
+                        Creating music and playing guitar in a band, constantly
+                        analyzing workflows to design better tools.
                     </p>
                 </div>
-                <div class="contact-info-container">
-                    <img
-                        src="./assets/linkedin.png"
-                        alt="LinkedIn icon"
-                        class="icon contact-icon"
-                    />
+
+                <div class="about-text">
                     <p>
-                        <a
-                            href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
-                            >LinkedIn</a
-                        >
+                        I am a developer working at the intersection of software
+                        engineering and creative sound design. Combining my
+                        technical background with my passion for music
+                        production, I build tools tailored for the modern
+                        creator ecosystem.
+                    </p>
+                    <p style="margin-top: 1rem">
+                        Previously, during my BSc internship at
+                        <strong>NeuroInova</strong>, I worked as a Game
+                        Developer focusing on modernizing legacy games from
+                        CreateJS to Konva.js. My role involved conducting
+                        research on unit testing and tracing tools, debugging,
+                        implementing new levels, and executing the complete
+                        tech-stack conversion of core game mechanics.
+                    </p>
+                    <p style="margin-top: 1rem">
+                        Currently, I am focused on the active development of
+                        <strong>ALMA</strong>, engineering native audio software
+                        with a core emphasis on high-performance DSP and
+                        intuitive UI/UX workflows using C++ and JUCE.
                     </p>
                 </div>
             </div>
         </section>
+
+        <hr class="divider" />
+
+        <section id="featured-plugin" class="section-container core-project">
+            <p class="subtitle">Featured Project</p>
+            <h2 class="section-title text-glow">ALMA Plugin</h2>
+
+            <div class="plugin-showcase">
+                <div class="plugin-image-container">
+                    <img
+                        src="./assets/alma.png"
+                        alt="ALMA Processor Plugin Interface"
+                        class="plugin-image-showcase"
+                    />
+                </div>
+
+                <div class="plugin-details">
+                    <p class="plugin-description">
+                        <strong>ALMA</strong> is an all-in-one mixbus processing
+                        unit developed in C++ and JUCE. Each of its 5 core macro
+                        modules handles a parallel chain of 3 independent
+                        effects, allowing users to toggle, stack, and fine-tune
+                        individual sub-parameters. It features an adaptive UI
+                        layer ("ALMA mode") that translates standard DSP
+                        parameters into intuitive terminology for beginners. It
+                        includes a factory bank and native custom preset
+                        serialization.
+                    </p>
+                    <div class="tech-badges">
+                        <span class="badge">C++</span>
+                        <span class="badge">JUCE</span>
+                        <span class="badge">DSP</span>
+                        <span class="badge">UI/UX (Figma)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider" />
+
+        <section id="projects" class="section-container">
+            <p class="subtitle">Explore My</p>
+            <h2 class="section-title">Other Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Ultimate Tic-Tac-Toe</h3>
+                    <p>
+                        A strategic twist on the classic game built with
+                        JavaScript.
+                    </p>
+                    <a
+                        href="https://github.com/Jaymsss15/Ultimate-Tic-Tac-Toe"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                        >GitHub</a
+                    >
+                </div>
+
+                <div class="project-card">
+                    <h3>Real Estate Website</h3>
+                    <p>Web platform for property listings and management.</p>
+                    <a
+                        href="https://github.com/Jaymsss15/Real-Estate-Website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                        >GitHub</a
+                    >
+                </div>
+
+                <div class="project-card">
+                    <h3>Animals Game</h3>
+                    <p>Interactive project focused on core game logic.</p>
+                    <a
+                        href="https://github.com/Jaymsss15/Animals-Game"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="project-link"
+                        >GitHub</a
+                    >
+                </div>
+            </div>
+        </section>
+
+        <hr class="divider" />
+
+        <section id="contact" class="section-container">
+            <h2 class="section-title">Contact</h2>
+            <div class="contact-cards">
+                <a href="mailto:tfam7@live.com.pt" class="contact-card">
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">tfam7@live.com.pt</span>
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="contact-card"
+                >
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">Tiago Marques</span>
+                </a>
+            </div>
+        </section>
+
         <footer>
-            <nav>
-                <div class="nav-links-container">
-                    <ul class="nav-links">
-                        <li><a href="#about">About</a></li>
-                        <!--<li><a href="#experience">Experience</a></li>-->
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <p>Copyright &#169; 2024 Tiago Marques.</p>
+            <p>&copy; 2026 Tiago Marques. All rights reserved.</p>
         </footer>
+
         <script src="script.js"></script>
     </body>
 </html>
