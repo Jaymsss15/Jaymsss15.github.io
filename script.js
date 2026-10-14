@@ -89,7 +89,7 @@ const translations = {
         "alma-subtitle": "Projeto em Destaque",
         "alma-title": "Plugin ALMA",
         "alma-desc":
-            '<strong>ALMA</strong> é um plugin de processamento de áudio completo desenvolvido em C++ e JUCE. Cada um dos seus 5 módulos macro gere uma cadeia paralela de 3 efeitos independentes, permitindo aos utilizadores alternar, acumular e ajustar sub-parâmetros individuais. Apresenta uma camada de UI adaptativa ("Modo ALMA") que traduz parâmetros padrão de DSP para uma terminologia intuitiva para iniciantes. Inclui presets de fábrica e serialização nativa de presets personalizados.',
+            '<strong>ALMA</strong> é um plugin de processamento de áudio desenvolvido em C++ e JUCE. Cada um dos seus 5 módulos macro gere uma cadeia paralela de 3 efeitos independentes, permitindo aos utilizadores alternar, acumular e ajustar sub-parâmetros individuais. Apresenta uma camada de UI adaptativa ("Modo ALMA") que traduz parâmetros padrão de DSP para uma terminologia intuitiva para iniciantes. Inclui presets de fábrica e serialização nativa de presets personalizados.',
         "alma-video-caption":
             'Remake de produção musical do tema "Magia" de Pedro Gonçalves, demonstrando algumas das capacidades de modelação de som do plugin ALMA.',
 
