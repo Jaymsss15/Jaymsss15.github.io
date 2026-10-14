@@ -529,6 +529,7 @@ footer p {
     .btn-container {
         justify-content: center;
     }
+
     #socials-container {
         justify-content: center;
     }
@@ -634,4 +635,28 @@ footer p {
 
 .project-link:hover::after {
     width: 100%;
+}
+
+/* Botão de Troca de Idioma */
+.lang-switch-container {
+    display: flex;
+    align-items: center;
+}
+
+.lang-toggle-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease-in-out;
+}
+
+.lang-toggle-btn:hover {
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
 }

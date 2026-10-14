@@ -30,10 +30,29 @@
             </div>
             <div>
                 <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#featured-plugin">ALMA Plugin</a></li>
-                    <li><a href="#projects">Other Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#profile" data-i18n="nav-home">Home</a></li>
+                    <li><a href="#about" data-i18n="nav-about">About</a></li>
+                    <li>
+                        <a href="#featured-plugin" data-i18n="nav-alma"
+                            >ALMA Plugin</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#projects" data-i18n="nav-projects"
+                            >Other Projects</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#contact" data-i18n="nav-contact">Contact</a>
+                    </li>
+                    <li class="lang-switch-container">
+                        <button
+                            class="lang-toggle-btn"
+                            onclick="toggleLanguage()"
+                        >
+                            <span class="lang-text">EN</span>
+                        </button>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -59,19 +78,54 @@
                     <span></span>
                 </div>
                 <div class="menu-links">
-                    <li><a href="#about" onclick="toggleMenu()">About</a></li>
                     <li>
-                        <a href="#featured-plugin" onclick="toggleMenu()"
+                        <a
+                            href="#profile"
+                            onclick="toggleMenu()"
+                            data-i18n="nav-home"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#about"
+                            onclick="toggleMenu()"
+                            data-i18n="nav-about"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#featured-plugin"
+                            onclick="toggleMenu()"
+                            data-i18n="nav-alma"
                             >ALMA Plugin</a
                         >
                     </li>
                     <li>
-                        <a href="#projects" onclick="toggleMenu()"
+                        <a
+                            href="#projects"
+                            onclick="toggleMenu()"
+                            data-i18n="nav-projects"
                             >Other Projects</a
                         >
                     </li>
                     <li>
-                        <a href="#contact" onclick="toggleMenu()">Contact</a>
+                        <a
+                            href="#contact"
+                            onclick="toggleMenu()"
+                            data-i18n="nav-contact"
+                            >Contact</a
+                        >
+                    </li>
+                    <li style="margin-top: 1rem">
+                        <button
+                            class="lang-toggle-btn"
+                            onclick="toggleLanguage()"
+                        >
+                            <span class="lang-flag">🇬🇧</span>
+                            <span class="lang-text">EN</span>
+                        </button>
                     </li>
                 </div>
             </div>
@@ -81,7 +135,9 @@
             <div class="profile-content">
                 <div class="profile-text">
                     <h1 class="title">Tiago Marques</h1>
-                    <p class="role">Software Developer & Sound Engineer</p>
+                    <p class="role" data-i18n="role">
+                        Software Developer & Sound Engineer
+                    </p>
                     <div id="socials-container">
                         <a
                             href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
@@ -120,13 +176,14 @@
         <hr class="divider" />
 
         <section id="about" class="section-container">
-            <p class="subtitle">Get to know more</p>
-            <h2 class="section-title">About Me</h2>
+            <p class="subtitle" data-i18n="about-subtitle">Get to know more</p>
+            <h2 class="section-title" data-i18n="about-title">About Me</h2>
             <div class="about-grid">
                 <div class="about-card">
-                    <h3>Education</h3>
+                    <h3 data-i18n="edu-title">Education</h3>
                     <p>
-                        <strong>MSc in Sound Design and Music Computing</strong
+                        <strong data-i18n="edu-msc"
+                            >MSc in Sound Design and Music Computing</strong
                         ><br />
                     </p>
                     <p
@@ -135,76 +192,79 @@
                             font-size: 0.9rem;
                             color: #a1a1aa;
                         "
+                        data-i18n="edu-bsc"
                     >
                         BSc in Computer Science and Engineering
                     </p>
                 </div>
 
                 <div class="about-card">
-                    <h3>Experience</h3>
+                    <h3 data-i18n="exp-title">Experience</h3>
                     <p>
-                        <strong>Audio & Game Development</strong><br />
-                        <span style="font-size: 0.85rem; color: #71717a"
-                            >2 Internships</span
-                        >
+                        <strong data-i18n="exp-role"
+                            >Game Development & Audio</strong
+                        ><br />
                     </p>
-
-                    <div
-                        style="
-                            margin-top: 0.8rem;
-                            display: flex;
-                            flex-direction: column;
-                            gap: 0.4rem;
-                        "
-                    >
-                        <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0">
-                            <span style="color: #ffffff">• Past:</span> Game Dev
-                            at NeuroInova
-                        </p>
-                        <p style="font-size: 0.9rem; color: #a1a1aa; margin: 0">
-                            <span style="color: #ffffff">• Current:</span> Audio
-                            Plugin DSP Dev
-                        </p>
+                    <div data-i18n="exp-desc">
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.5rem;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.3rem;
+                                font-size: 0.9rem;
+                                color: #a1a1aa;
+                            "
+                        >
+                            <li>• Game Dev at NeuroInova</li>
+                            <li>• Audio Plugin Dev at Coletivo Criativo</li>
+                        </ul>
                     </div>
                 </div>
 
                 <div class="about-card">
-                    <h3>Interests</h3>
-                    <p><strong>Guitarist & Music Producer </strong><br /></p>
-                    <p
-                        style="
-                            margin-top: 0.5rem;
-                            font-size: 0.9rem;
-                            color: #a1a1aa;
-                        "
-                    >
-                        Creating music and playing guitar in a band, constantly
-                        analyzing workflows to design better tools.
+                    <h3 data-i18n="interests-title">Interests</h3>
+                    <p>
+                        <strong data-i18n="interests-role"
+                            >Music & Audio Tools</strong
+                        ><br />
                     </p>
+                    <div data-i18n="interests-desc">
+                        <ul
+                            style="
+                                list-style: none;
+                                padding: 0;
+                                margin-top: 0.5rem;
+                                display: flex;
+                                flex-direction: column;
+                                gap: 0.3rem;
+                                font-size: 0.9rem;
+                                color: #a1a1aa;
+                            "
+                        >
+                            <li>• Music Producer</li>
+                            <li>• Guitarist in cover & event bands</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div class="about-text">
-                    <p>
-                        I am a developer working at the intersection of software
-                        engineering and creative sound design. Combining my
-                        technical background with my passion for music
-                        production, I build tools tailored for the modern
-                        creator ecosystem.
-                    </p>
-                    <p style="margin-top: 1rem">
-                        Previously, during my BSc internship at
+                    <p data-i18n="about-p1">
+                        During my BSc internship at
                         <strong>NeuroInova</strong>, I worked as a Game
                         Developer focusing on modernizing legacy games from
                         CreateJS to Konva.js. My role involved conducting
-                        research on unit testing and tracing tools, debugging,
-                        implementing new levels, and executing the complete
-                        tech-stack conversion of core game mechanics.
+                        research on unit testing tools, debugging, implementing
+                        new levels, and executing the complete tech-stack
+                        conversion of core game mechanics.
                     </p>
-                    <p style="margin-top: 1rem">
+                    <p style="margin-top: 1rem" data-i18n="about-p2">
                         Currently, I am focused on the active development of
-                        <strong>ALMA</strong>, engineering native audio software
-                        with a core emphasis on high-performance DSP and
-                        intuitive UI/UX workflows using C++ and JUCE.
+                        <strong>ALMA</strong>, a native audio software project
+                        initiated during my master's internship at
+                        <strong>Coletivo Criativo</strong>.
                     </p>
                 </div>
             </div>
@@ -213,8 +273,10 @@
         <hr class="divider" />
 
         <section id="featured-plugin" class="section-container core-project">
-            <p class="subtitle">Featured Project</p>
-            <h2 class="section-title text-glow">ALMA Plugin</h2>
+            <p class="subtitle" data-i18n="alma-subtitle">Featured Project</p>
+            <h2 class="section-title text-glow" data-i18n="alma-title">
+                ALMA Plugin
+            </h2>
 
             <div class="plugin-showcase">
                 <div class="plugin-image-container">
@@ -226,7 +288,7 @@
                 </div>
 
                 <div class="plugin-details">
-                    <p class="plugin-description">
+                    <p class="plugin-description" data-i18n="alma-desc">
                         <strong>ALMA</strong> is an all-in-one audio plugin
                         developed in C++ and JUCE. Each of its 5 core macro
                         modules handles a parallel chain of 3 independent
@@ -245,17 +307,78 @@
                     </div>
                 </div>
             </div>
+
+            <div
+                class="plugin-video-section"
+                style="
+                    margin-top: 4rem;
+                    max-width: 800px;
+                    margin-left: auto;
+                    margin-right: auto;
+                "
+            >
+                <div
+                    class="video-container"
+                    style="
+                        position: relative;
+                        width: 100%;
+                        padding-bottom: 56.25%;
+                        height: 0;
+                        overflow: hidden;
+                        border-radius: 12px;
+                        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+                    "
+                >
+                    <iframe
+                        style="
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            border: 0;
+                        "
+                        src="https://www.youtube.com/embed/nO_8UWvaoDM"
+                        title="ALMA Plugin Showcase Video"
+                        allow="
+                            accelerometer;
+                            autoplay;
+                            clipboard-write;
+                            encrypted-media;
+                            gyroscope;
+                            picture-in-picture;
+                        "
+                        allowfullscreen
+                    >
+                    </iframe>
+                </div>
+                <p
+                    style="
+                        margin-top: 0.8rem;
+                        font-size: 0.9rem;
+                        color: #a1a1aa;
+                        text-align: center;
+                    "
+                    data-i18n="alma-video-caption"
+                >
+                    A music production remake of "Magia" by Pedro Gonçalves,
+                    demonstrating some of the sound shaping capabilities of the
+                    ALMA audio plugin.
+                </p>
+            </div>
         </section>
 
         <hr class="divider" />
 
         <section id="projects" class="section-container">
-            <p class="subtitle">Explore My</p>
-            <h2 class="section-title">Other Projects</h2>
+            <p class="subtitle" data-i18n="projects-subtitle">Explore My</p>
+            <h2 class="section-title" data-i18n="projects-title">
+                Other Projects
+            </h2>
             <div class="projects-grid">
                 <div class="project-card">
-                    <h3>Ultimate Tic-Tac-Toe</h3>
-                    <p>
+                    <h3 data-i18n="ttt-title">Ultimate Tic-Tac-Toe</h3>
+                    <p data-i18n="ttt-desc">
                         A strategic twist on the classic game built with
                         JavaScript.
                     </p>
@@ -269,8 +392,10 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>Real Estate Website</h3>
-                    <p>Web platform for property listings and management.</p>
+                    <h3 data-i18n="re-title">Real Estate Website</h3>
+                    <p data-i18n="re-desc">
+                        Web platform for property listings and management.
+                    </p>
                     <a
                         href="https://github.com/Jaymsss15/Real-Estate-Website"
                         target="_blank"
@@ -281,8 +406,10 @@
                 </div>
 
                 <div class="project-card">
-                    <h3>Animals Game</h3>
-                    <p>Interactive project focused on core game logic.</p>
+                    <h3 data-i18n="ag-title">Animals Game</h3>
+                    <p data-i18n="ag-desc">
+                        Interactive project focused on core game logic.
+                    </p>
                     <a
                         href="https://github.com/Jaymsss15/Animals-Game"
                         target="_blank"
@@ -297,7 +424,7 @@
         <hr class="divider" />
 
         <section id="contact" class="section-container">
-            <h2 class="section-title">Contact</h2>
+            <h2 class="section-title" data-i18n="contact-title">Contact</h2>
             <div class="contact-cards">
                 <a href="mailto:tfam7@live.com.pt" class="contact-card">
                     <span class="contact-label">Email</span>
@@ -316,7 +443,9 @@
         </section>
 
         <footer>
-            <p>&copy; 2026 Tiago Marques. All rights reserved.</p>
+            <p data-i18n="footer-rights">
+                &copy; 2026 Tiago Marques. All rights reserved.
+            </p>
         </footer>
 
         <script src="script.js"></script>
