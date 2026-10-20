@@ -9,7 +9,7 @@ const translations = {
         "nav-contact": "Contact",
 
         // Profile
-        role: "Software Developer & Sound Engineer",
+        role: "Software Developer & Audio Engineer",
 
         // About
         "about-subtitle": "Get to know more",
@@ -64,7 +64,7 @@ const translations = {
         "nav-contact": "Contacto",
 
         // Profile
-        role: "Engenheiro Informático & Engenheiro de Som",
+        role: "Engenheiro Informático & Engenheiro de Áudio",
 
         // About
         "about-subtitle": "Conhece mais",
