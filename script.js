@@ -1,7 +1,7 @@
 // Dicionário de Traduções
 const translations = {
     en: {
-        // Navegação
+        // Navigation
         "nav-home": "Home",
         "nav-about": "About",
         "nav-alma": "ALMA Plugin",
@@ -10,6 +10,8 @@ const translations = {
 
         // Profile
         role: "Software Developer & Audio Engineer",
+        "cta-work": "Featured Work",
+        "cta-contact": "Get in Touch",
 
         // About
         "about-subtitle": "Get to know more",
@@ -20,15 +22,15 @@ const translations = {
         "exp-title": "Experience",
         "exp-role": "Game Development & Audio",
         "exp-desc":
-            "<ul style='list-style: none; padding: 0; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; color: #a1a1aa;'><li>• Game Dev at NeuroInova</li><li>• Audio Plugin Dev at Coletivo Criativo</li></ul>",
+            "<li>Game Dev at NeuroInova</li><li>Audio Plugin Dev at Coletivo Criativo</li>",
         "interests-title": "Interests",
         "interests-role": "Music & Audio Tools",
         "interests-desc":
-            "<ul style='list-style: none; padding: 0; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; color: #a1a1aa;'><li>• Music Producer</li><li>• Guitarist in cover & event bands</li></ul>",
+            "<li>Music Producer</li><li>Guitarist in cover & event bands</li>",
         "about-p1":
-            "During my BSc internship at <strong>NeuroInova</strong>, I worked as a Game Developer focusing on modernizing legacy games from CreateJS to Konva.js. My role involved conducting research on unit testing tools, debugging, implementing new levels, and executing the complete tech-stack conversion of core game mechanics.",
+            'During my BSc internship at <a href="https://neuroinova.com/pt/home/" target="_blank" rel="noopener noreferrer" class="company-link">NeuroInova</a>, I worked as a Game Developer focusing on modernizing legacy games from CreateJS to Konva.js. My role involved conducting research on unit testing tools, debugging, implementing new levels, and executing the complete tech-stack conversion of core game mechanics.',
         "about-p2":
-            "Currently, I am focused on the active development of <strong>ALMA</strong>, a native audio software project initiated during my master's internship at <strong>Coletivo Criativo</strong>.",
+            'Currently, I am focused on the active development of <a href="#featured-plugin" class="company-link">ALMA</a>, an audio software project initiated during my master\'s internship at <a href="https://coletivocriativo.pt/" target="_blank" rel="noopener noreferrer" class="company-link">Coletivo Criativo</a>.',
 
         // Featured Plugin (ALMA)
         "alma-subtitle": "Featured Project",
@@ -56,7 +58,7 @@ const translations = {
         "footer-rights": "© 2026 Tiago Marques. All rights reserved.",
     },
     pt: {
-        // Navegação
+        // Navigation
         "nav-home": "Início",
         "nav-about": "Sobre Mim",
         "nav-alma": "Plugin ALMA",
@@ -65,6 +67,8 @@ const translations = {
 
         // Profile
         role: "Engenheiro Informático & Engenheiro de Áudio",
+        "cta-work": "Projeto em Destaque",
+        "cta-contact": "Entrar em Contacto",
 
         // About
         "about-subtitle": "Conhece mais",
@@ -75,15 +79,15 @@ const translations = {
         "exp-title": "Experiência",
         "exp-role": "Desenvolvimento de Jogos & Áudio",
         "exp-desc":
-            "<ul style='list-style: none; padding: 0; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; color: #a1a1aa;'><li>• Game Dev na NeuroInova</li><li>• Dev de Plugins no Coletivo Criativo</li></ul>",
+            "<li>Game Dev na NeuroInova</li><li>Dev de Plugins no Coletivo Criativo</li>",
         "interests-title": "Interesses",
         "interests-role": "Música & Ferramentas de Áudio",
         "interests-desc":
-            "<ul style='list-style: none; padding: 0; margin-top: 0.5rem; display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.9rem; color: #a1a1aa;'><li>• Produtor Musical</li><li>• Guitarrista em festas de baile</li></ul>",
+            "<li>Produtor Musical</li><li>Guitarrista em festas de baile</li>",
         "about-p1":
-            'Durante o meu estágio da licenciatura na <strong>NeuroInova</strong>, trabalhei como "Game Developer" focado na modernização de jogos de CreateJS para Konva.js. As minhas funções incluíram investigação de ferramentas de testes unitários, depuração, implementação de novos níveis e conversão completa da arquitetura do jogo.',
+            'Durante o meu estágio da licenciatura na <a href="https://neuroinova.com/pt/home/" target="_blank" rel="noopener noreferrer" class="company-link">NeuroInova</a>, trabalhei como "Game Developer" focado na modernização de jogos de CreateJS para Konva.js. As minhas funções incluíram investigação de ferramentas de testes unitários, depuração, implementação de novos níveis e conversão completa da arquitetura do jogo.',
         "about-p2":
-            "Atualmente, estou focado no desenvolvimento do <strong>ALMA</strong>, um software de áudio que teve origem no meu estágio curricular no <strong>Coletivo Criativo</strong> durante o mestrado.",
+            'Atualmente, estou focado no desenvolvimento do <a href="#featured-plugin" class="company-link">ALMA</a>, um software de áudio que teve origem no meu estágio curricular no <a href="https://coletivocriativo.pt/" target="_blank" rel="noopener noreferrer" class="company-link">Coletivo Criativo</a> durante o mestrado.',
 
         // Featured Plugin (ALMA)
         "alma-subtitle": "Projeto em Destaque",
@@ -114,25 +118,14 @@ const translations = {
 
 let currentLang = "en";
 
-function toggleMenu() {
-    const menu = document.querySelector(".menu-links");
-    const icon = document.querySelector(".hamburger-icon");
-    if (menu && icon) {
-        menu.classList.toggle("open");
-        icon.classList.toggle("open");
-    }
-}
-
 function toggleLanguage() {
     currentLang = currentLang === "en" ? "pt" : "en";
 
-    // Atualiza o texto do botão para o idioma atual
     const textSpans = document.querySelectorAll(".lang-text");
     textSpans.forEach(
         (span) => (span.textContent = currentLang === "pt" ? "PT" : "EN"),
     );
 
-    // Traduz todos os elementos com o atributo data-i18n
     document.querySelectorAll("[data-i18n]").forEach((element) => {
         const key = element.getAttribute("data-i18n");
         if (translations[currentLang] && translations[currentLang][key]) {

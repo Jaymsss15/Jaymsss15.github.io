@@ -2,444 +2,354 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Tiago Marques | Portfolio</title>
+        <meta
+            name="description"
+            content="Portfolio of Tiago Marques: software developer and audio engineer, creator of the ALMA audio plugin."
+        />
+        <link rel="icon" href="./assets/tmlogo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;800&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <nav id="desktop-nav">
-            <div class="logo-wrapper">
-                <a
-                    href="https://www.youtube.com/@TiagoM_Music"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <img
-                        src="./assets/tmlogo.png"
-                        alt="Tiago Marques Artist Logo"
-                        class="artist-logo"
-                    />
-                </a>
-            </div>
-            <div>
-                <ul class="nav-links">
-                    <li><a href="#profile" data-i18n="nav-home">Home</a></li>
-                    <li><a href="#about" data-i18n="nav-about">About</a></li>
-                    <li>
-                        <a href="#featured-plugin" data-i18n="nav-alma"
-                            >ALMA Plugin</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#projects" data-i18n="nav-projects"
-                            >Other Projects</a
-                        >
-                    </li>
-                    <li>
-                        <a href="#contact" data-i18n="nav-contact">Contact</a>
-                    </li>
-                    <li class="lang-switch-container">
-                        <button
-                            class="lang-toggle-btn"
-                            onclick="toggleLanguage()"
-                        >
-                            <span class="lang-text">EN</span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        <header>
+            <a
+                class="logo"
+                href="https://www.youtube.com/@TiagoM_Music"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Tiago Marques on YouTube"
+            >
+                <img src="./assets/tmlogo.png" alt="Tiago Marques logo" />
+            </a>
 
-        <nav id="hamburger-nav">
-            <div class="logo-wrapper">
-                <a
-                    href="https://www.youtube.com/@TiagoM_Music"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <img
-                        src="./assets/tmlogo.png"
-                        alt="Tiago Marques Artist Logo"
-                        class="artist-logo"
-                    />
-                </a>
-            </div>
-            <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <div class="menu-links">
-                    <li>
-                        <a
-                            href="#profile"
-                            onclick="toggleMenu()"
-                            data-i18n="nav-home"
-                            >Home</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#about"
-                            onclick="toggleMenu()"
-                            data-i18n="nav-about"
-                            >About</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#featured-plugin"
-                            onclick="toggleMenu()"
-                            data-i18n="nav-alma"
-                            >ALMA Plugin</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#projects"
-                            onclick="toggleMenu()"
-                            data-i18n="nav-projects"
-                            >Other Projects</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            onclick="toggleMenu()"
-                            data-i18n="nav-contact"
-                            >Contact</a
-                        >
-                    </li>
-                    <li class="mobile-lang-item">
-                        <button
-                            class="lang-toggle-btn"
-                            onclick="toggleLanguage()"
-                        >
-                            <span class="lang-text">EN</span>
-                        </button>
-                    </li>
-                </div>
-            </div>
-        </nav>
+            <!-- Navegação Desktop -->
+            <nav
+                class="tabs desktop-nav"
+                data-tabs
+                aria-label="Main Navigation"
+            >
+                <a href="#profile" data-i18n="nav-home">Home</a>
+                <a href="#about" data-i18n="nav-about">About</a>
+                <a href="#featured-plugin" data-i18n="nav-alma">ALMA Plugin</a>
+                <a href="#projects" data-i18n="nav-projects">Other Projects</a>
+                <a href="#contact" data-i18n="nav-contact">Contact</a>
+            </nav>
 
-        <section id="profile" class="section-container">
-            <div class="profile-content">
-                <div class="profile-text">
-                    <h1 class="title">Tiago Marques</h1>
+            <div class="header-right">
+                <button
+                    class="lang-toggle-btn"
+                    onclick="toggleLanguage()"
+                    aria-label="Toggle language"
+                >
+                    <span class="lang-text">EN</span>
+                </button>
+
+                <!-- Botão Hambúrguer para Mobile -->
+                <button
+                    class="hamburger-btn"
+                    id="hamburgerBtn"
+                    aria-label="Toggle menu"
+                    onclick="toggleMobileMenu()"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+            <!-- Dropdown Menu Mobile -->
+            <nav class="mobile-menu" id="mobileMenu">
+                <a
+                    href="#profile"
+                    onclick="closeMobileMenu()"
+                    data-i18n="nav-home"
+                    >Home</a
+                >
+                <a
+                    href="#about"
+                    onclick="closeMobileMenu()"
+                    data-i18n="nav-about"
+                    >About</a
+                >
+                <a
+                    href="#featured-plugin"
+                    onclick="closeMobileMenu()"
+                    data-i18n="nav-alma"
+                    >ALMA Plugin</a
+                >
+                <a
+                    href="#projects"
+                    onclick="closeMobileMenu()"
+                    data-i18n="nav-projects"
+                    >Other Projects</a
+                >
+                <a
+                    href="#contact"
+                    onclick="closeMobileMenu()"
+                    data-i18n="nav-contact"
+                    >Contact</a
+                >
+            </nav>
+        </header>
+
+        <main>
+            <!-- SECÇÃO HOME / HERO -->
+            <section id="profile" class="panel hero">
+                <div class="hero-text">
+                    <h1>Tiago<br />Marques</h1>
                     <p class="role" data-i18n="role">
                         Software Developer & Audio Engineer
                     </p>
-                    <div id="socials-container">
-                        <a
-                            href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="./assets/linkedin.png"
-                                alt="LinkedIn"
-                                class="icon"
-                            />
-                        </a>
-                        <a
-                            href="https://github.com/Jaymsss15"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <img
-                                src="./assets/github.png"
-                                alt="GitHub"
-                                class="icon"
-                            />
-                        </a>
+
+                    <div class="actions-block">
+                        <div class="btns">
+                            <a
+                                class="btn p"
+                                href="#featured-plugin"
+                                data-i18n="cta-work"
+                                >Featured Work</a
+                            >
+                            <a
+                                class="btn s"
+                                href="#contact"
+                                data-i18n="cta-contact"
+                                >Get in Touch</a
+                            >
+                        </div>
+                        <div class="soc">
+                            <a
+                                href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                            >
+                                <img
+                                    src="./assets/linkedin.png"
+                                    alt="LinkedIn"
+                                />
+                            </a>
+                            <a
+                                href="https://github.com/Jaymsss15"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                            >
+                                <img src="./assets/github.png" alt="GitHub" />
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <div class="profile-pic-wrapper">
+
+                <div class="photo-wrapper">
                     <img
+                        class="photo"
                         src="./assets/profile-pic.jpeg"
-                        alt="Tiago Marques"
-                        class="profile-pic"
+                        alt="Portrait of Tiago Marques"
+                        width="400"
+                        height="400"
                     />
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <hr class="divider" />
-
-        <section id="about" class="section-container">
-            <p class="subtitle" data-i18n="about-subtitle">Get to know more</p>
-            <h2 class="section-title" data-i18n="about-title">About Me</h2>
-            <div class="about-grid">
-                <div class="about-card">
-                    <h3 data-i18n="edu-title">Education</h3>
-                    <p>
-                        <strong data-i18n="edu-msc"
-                            >MSc in Sound Design and Music Computing</strong
-                        ><br />
-                    </p>
-                    <p
-                        style="
-                            margin-top: 0.5rem;
-                            font-size: 0.9rem;
-                            color: #a1a1aa;
-                        "
-                        data-i18n="edu-bsc"
-                    >
-                        BSc in Computer Science and Engineering
-                    </p>
-                </div>
-
-                <div class="about-card">
-                    <h3 data-i18n="exp-title">Experience</h3>
-                    <p>
-                        <strong data-i18n="exp-role"
-                            >Game Development & Audio</strong
-                        ><br />
-                    </p>
-                    <div data-i18n="exp-desc">
-                        <ul
-                            style="
-                                list-style: none;
-                                padding: 0;
-                                margin-top: 0.5rem;
-                                display: flex;
-                                flex-direction: column;
-                                gap: 0.3rem;
-                                font-size: 0.9rem;
-                                color: #a1a1aa;
-                            "
+            <!-- SECÇÃO ABOUT -->
+            <section id="about" class="panel">
+                <p class="sub" data-i18n="about-subtitle">Get to know more</p>
+                <h2 data-i18n="about-title">About Me</h2>
+                <div class="cols">
+                    <div>
+                        <h3 data-i18n="edu-title">Education</h3>
+                        <span class="card-subtitle" data-i18n="edu-msc"
+                            >MSc in Sound Design and Music Computing</span
                         >
-                            <li>• Game Dev at NeuroInova</li>
-                            <li>• Audio Plugin Dev at Coletivo Criativo</li>
+                        <p class="mut" data-i18n="edu-bsc">
+                            BSc in Computer Science and Engineering
+                        </p>
+                    </div>
+                    <div>
+                        <h3 data-i18n="exp-title">Experience</h3>
+                        <span class="card-subtitle" data-i18n="exp-role"
+                            >Game Development & Audio</span
+                        >
+                        <ul class="mini" data-i18n="exp-desc">
+                            <li>Game Dev at NeuroInova</li>
+                            <li>Audio Plugin Dev at Coletivo Criativo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 data-i18n="interests-title">Interests</h3>
+                        <span class="card-subtitle" data-i18n="interests-role"
+                            >Music & Audio Tools</span
+                        >
+                        <ul class="mini" data-i18n="interests-desc">
+                            <li>Music Producer</li>
+                            <li>Guitarist in cover & event bands</li>
                         </ul>
                     </div>
                 </div>
-
-                <div class="about-card">
-                    <h3 data-i18n="interests-title">Interests</h3>
-                    <p>
-                        <strong data-i18n="interests-role"
-                            >Music & Audio Tools</strong
-                        ><br />
-                    </p>
-                    <div data-i18n="interests-desc">
-                        <ul
-                            style="
-                                list-style: none;
-                                padding: 0;
-                                margin-top: 0.5rem;
-                                display: flex;
-                                flex-direction: column;
-                                gap: 0.3rem;
-                                font-size: 0.9rem;
-                                color: #a1a1aa;
-                            "
-                        >
-                            <li>• Music Producer</li>
-                            <li>• Guitarist in cover & event bands</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="about-text">
+                <div class="prose">
                     <p data-i18n="about-p1">
                         During my BSc internship at
-                        <strong>NeuroInova</strong>, I worked as a Game
-                        Developer focusing on modernizing legacy games from
-                        CreateJS to Konva.js. My role involved conducting
-                        research on unit testing tools, debugging, implementing
-                        new levels, and executing the complete tech-stack
-                        conversion of core game mechanics.
+                        <a
+                            href="https://neuroinova.com/pt/home/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="company-link"
+                            >NeuroInova</a
+                        >, I worked as a Game Developer focusing on modernizing
+                        legacy games from CreateJS to Konva.js. My role involved
+                        conducting research on unit testing tools, debugging,
+                        implementing new levels, and executing the complete
+                        tech-stack conversion of core game mechanics.
                     </p>
-                    <p style="margin-top: 1rem" data-i18n="about-p2">
+                    <p data-i18n="about-p2">
                         Currently, I am focused on the active development of
-                        <strong>ALMA</strong>, a native audio software project
-                        initiated during my master's internship at
-                        <strong>Coletivo Criativo</strong>.
+                        <a href="#featured-plugin" class="company-link">ALMA</a
+                        >, an audio software project initiated during my
+                        master's internship at
+                        <a
+                            href="https://coletivocriativo.pt/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="company-link"
+                            >Coletivo Criativo</a
+                        >.
                     </p>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <hr class="divider" />
-
-        <section id="featured-plugin" class="section-container core-project">
-            <p class="subtitle" data-i18n="alma-subtitle">Featured Project</p>
-            <h2 class="section-title text-glow" data-i18n="alma-title">
-                ALMA Plugin
-            </h2>
-
-            <div class="plugin-showcase">
-                <div class="plugin-image-container">
+            <!-- SECÇÃO FEATURED PLUGIN (ALMA) -->
+            <section id="featured-plugin" class="panel">
+                <p class="sub" data-i18n="alma-subtitle">Featured Project</p>
+                <h2 data-i18n="alma-title">ALMA Plugin</h2>
+                <div class="alma">
                     <img
                         src="./assets/alma.png"
                         alt="ALMA Processor Plugin Interface"
-                        class="plugin-image-showcase"
                     />
-                </div>
-
-                <div class="plugin-details">
-                    <p class="plugin-description" data-i18n="alma-desc">
-                        <strong>ALMA</strong> is an all-in-one audio plugin
-                        developed in C++ and JUCE. Each of its 5 core macro
-                        modules handles a parallel chain of 3 independent
-                        effects, allowing users to toggle, stack, and fine-tune
-                        individual sub-parameters. It features an adaptive UI
-                        layer ("ALMA mode") that translates standard DSP
-                        parameters into intuitive terminology for beginners. It
-                        includes a factory bank and native custom preset
-                        serialization.
-                    </p>
-                    <div class="tech-badges">
-                        <span class="badge">C++</span>
-                        <span class="badge">JUCE</span>
-                        <span class="badge">DSP</span>
-                        <span class="badge">UI/UX (Figma)</span>
+                    <div>
+                        <p data-i18n="alma-desc">
+                            <strong>ALMA</strong> is an all-in-one audio plugin
+                            developed in C++ and JUCE. Each of its 5 core macro
+                            modules handles a parallel chain of 3 independent
+                            effects, allowing users to toggle, stack, and
+                            fine-tune individual sub-parameters. It features an
+                            adaptive UI layer ("ALMA mode") that translates
+                            standard DSP parameters into intuitive terminology
+                            for beginners. It includes a factory bank and native
+                            custom preset serialization.
+                        </p>
+                        <ul class="tags">
+                            <li>C++</li>
+                            <li>JUCE</li>
+                            <li>DSP</li>
+                            <li>UI/UX (Figma)</li>
+                        </ul>
                     </div>
                 </div>
-            </div>
+                <figure>
+                    <div class="vid">
+                        <iframe
+                            src="https://www.youtube-nocookie.com/embed/nO_8UWvaoDM"
+                            title="ALMA Plugin Showcase Video"
+                            loading="lazy"
+                            allow="encrypted-media; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    </div>
+                    <figcaption data-i18n="alma-video-caption">
+                        A music production remake of "Magia" by Pedro Gonçalves,
+                        demonstrating some of the sound shaping capabilities of
+                        the ALMA audio plugin.
+                    </figcaption>
+                </figure>
+            </section>
 
-            <div
-                class="plugin-video-section"
-                style="
-                    margin-top: 4rem;
-                    max-width: 800px;
-                    margin-left: auto;
-                    margin-right: auto;
-                "
-            >
-                <div
-                    class="video-container"
-                    style="
-                        position: relative;
-                        width: 100%;
-                        padding-bottom: 56.25%;
-                        height: 0;
-                        overflow: hidden;
-                        border-radius: 12px;
-                        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-                    "
-                >
-                    <iframe
-                        style="
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            border: 0;
-                        "
-                        src="https://www.youtube.com/embed/nO_8UWvaoDM"
-                        title="ALMA Plugin Showcase Video"
-                        allow="
-                            accelerometer;
-                            autoplay;
-                            clipboard-write;
-                            encrypted-media;
-                            gyroscope;
-                            picture-in-picture;
-                        "
-                        allowfullscreen
-                    >
-                    </iframe>
-                </div>
-                <p
-                    style="
-                        margin-top: 0.8rem;
-                        font-size: 0.9rem;
-                        color: #a1a1aa;
-                        text-align: center;
-                    "
-                    data-i18n="alma-video-caption"
-                >
-                    A music production remake of "Magia" by Pedro Gonçalves,
-                    demonstrating some of the sound shaping capabilities of the
-                    ALMA audio plugin.
-                </p>
-            </div>
-        </section>
+            <!-- SECÇÃO OTHER PROJECTS -->
+            <section id="projects" class="panel">
+                <p class="sub" data-i18n="projects-subtitle">Explore My</p>
+                <h2 data-i18n="projects-title">Other Projects</h2>
+                <ul class="list">
+                    <li>
+                        <a
+                            href="https://github.com/Jaymsss15/Ultimate-Tic-Tac-Toe"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <div>
+                                <h3 data-i18n="ttt-title">
+                                    Ultimate Tic-Tac-Toe
+                                </h3>
+                                <p data-i18n="ttt-desc">
+                                    A strategic twist on the classic game built
+                                    with JavaScript.
+                                </p>
+                            </div>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/Jaymsss15/Real-Estate-Website"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <div>
+                                <h3 data-i18n="re-title">
+                                    Real Estate Website
+                                </h3>
+                                <p data-i18n="re-desc">
+                                    Web platform for property listings and
+                                    management.
+                                </p>
+                            </div>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            href="https://github.com/Jaymsss15/Animals-Game"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <div>
+                                <h3 data-i18n="ag-title">Animals Game</h3>
+                                <p data-i18n="ag-desc">
+                                    Interactive project focused on core game
+                                    logic.
+                                </p>
+                            </div>
+                            <span>GitHub</span>
+                        </a>
+                    </li>
+                </ul>
+            </section>
 
-        <hr class="divider" />
-
-        <section id="projects" class="section-container">
-            <p class="subtitle" data-i18n="projects-subtitle">Explore My</p>
-            <h2 class="section-title" data-i18n="projects-title">
-                Other Projects
-            </h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3 data-i18n="ttt-title">Ultimate Tic-Tac-Toe</h3>
-                    <p data-i18n="ttt-desc">
-                        A strategic twist on the classic game built with
-                        JavaScript.
-                    </p>
+            <!-- SECÇÃO CONTACT -->
+            <section id="contact" class="panel">
+                <h2 data-i18n="contact-title">Contact</h2>
+                <div class="cards">
+                    <a href="mailto:tfam7@live.com.pt">
+                        <small>Email</small>
+                        <b>tfam7@live.com.pt</b>
+                    </a>
                     <a
-                        href="https://github.com/Jaymsss15/Ultimate-Tic-Tac-Toe"
+                        href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="project-link"
-                        >GitHub</a
                     >
+                        <small>LinkedIn</small>
+                        <b>Tiago Marques</b>
+                    </a>
                 </div>
-
-                <div class="project-card">
-                    <h3 data-i18n="re-title">Real Estate Website</h3>
-                    <p data-i18n="re-desc">
-                        Web platform for property listings and management.
-                    </p>
-                    <a
-                        href="https://github.com/Jaymsss15/Real-Estate-Website"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                        >GitHub</a
-                    >
-                </div>
-
-                <div class="project-card">
-                    <h3 data-i18n="ag-title">Animals Game</h3>
-                    <p data-i18n="ag-desc">
-                        Interactive project focused on core game logic.
-                    </p>
-                    <a
-                        href="https://github.com/Jaymsss15/Animals-Game"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="project-link"
-                        >GitHub</a
-                    >
-                </div>
-            </div>
-        </section>
-
-        <hr class="divider" />
-
-        <section id="contact" class="section-container">
-            <h2 class="section-title" data-i18n="contact-title">Contact</h2>
-            <div class="contact-cards">
-                <a href="mailto:tfam7@live.com.pt" class="contact-card">
-                    <span class="contact-label">Email</span>
-                    <span class="contact-value">tfam7@live.com.pt</span>
-                </a>
-                <a
-                    href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="contact-card"
-                >
-                    <span class="contact-label">LinkedIn</span>
-                    <span class="contact-value">Tiago Marques</span>
-                </a>
-            </div>
-        </section>
+            </section>
+        </main>
 
         <footer>
             <p data-i18n="footer-rights">
@@ -448,5 +358,63 @@
         </footer>
 
         <script src="script.js"></script>
+        <script>
+            (function () {
+                const panels = [...document.querySelectorAll(".panel")];
+
+                function showPanel(targetId) {
+                    const target =
+                        panels.find((p) => p.id === targetId) || panels[0];
+
+                    panels.forEach((p) =>
+                        p.classList.toggle("on", p === target),
+                    );
+
+                    document
+                        .querySelectorAll(".tabs a, .mobile-menu a")
+                        .forEach((a) => {
+                            if (a.getAttribute("href") === "#" + target.id)
+                                a.setAttribute("aria-current", "page");
+                            else a.removeAttribute("aria-current");
+                        });
+
+                    window.scrollTo(0, 0);
+                }
+
+                document.addEventListener("click", (e) => {
+                    const link = e.target.closest('a[href^="#"]');
+                    if (link) {
+                        const id = link.getAttribute("href").slice(1);
+                        if (panels.some((p) => p.id === id)) {
+                            e.preventDefault();
+                            history.pushState(null, "", "#" + id);
+                            showPanel(id);
+                        }
+                    }
+                });
+
+                window.addEventListener("popstate", () => {
+                    const currentId = location.hash.slice(1);
+                    showPanel(currentId);
+                });
+
+                const initialId = location.hash.slice(1);
+                showPanel(initialId);
+            })();
+
+            function toggleMobileMenu() {
+                const menu = document.getElementById("mobileMenu");
+                const btn = document.getElementById("hamburgerBtn");
+                menu.classList.toggle("active");
+                btn.classList.toggle("active");
+            }
+
+            function closeMobileMenu() {
+                const menu = document.getElementById("mobileMenu");
+                const btn = document.getElementById("hamburgerBtn");
+                menu.classList.remove("active");
+                btn.classList.remove("active");
+            }
+        </script>
     </body>
 </html>
