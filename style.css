@@ -542,48 +542,150 @@ figcaption {
 }
 
 /* ==========================================================================
-   OTHER PROJECTS SECTION
+   OTHER PROJECTS & MUSIC GRID SECTION
    ========================================================================== */
-.list {
-    margin-top: 1rem;
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.8rem;
+    margin-top: 1.5rem;
 }
 
-.list a {
+.project-category {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.8rem 1rem;
-    border-top: 1px solid var(--line);
-    transition: all 0.25s ease;
-    border-radius: 8px;
+    flex-direction: column;
 }
 
-.list li:last-child a {
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
     border-bottom: 1px solid var(--line);
 }
 
-.list a:hover {
+.category-header svg {
+    color: var(--ac);
+    flex-shrink: 0;
+}
+
+/* Animações e Hover Restaurados nos Projetos */
+.project-category .list li a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem 1rem;
+    border-top: none;
+    border-bottom: 1px solid var(--line);
+    border-radius: 10px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-category .list li:last-child a {
+    border-bottom: none;
+}
+
+.project-category .list li a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+.project-category h4 {
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+}
+
+.project-category p {
+    font-size: 0.88rem;
+    color: var(--mut);
+    line-height: 1.4;
+}
+
+.external-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--mut);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+}
+
+.project-category .list li a:hover .external-link {
+    color: var(--ink);
+}
+
+/* Cartão de Vídeo de Música (YouTube) */
+.youtube-card {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--line);
     background: var(--card);
 }
 
-.list h3 {
-    font-size: 1.4rem;
-    color: var(--ink);
+.youtube-card .vid {
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
 }
 
-.list p {
+/* Detalhes da Música / Coluna Direita */
+.music-details {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 0 0.2rem;
+}
+
+.music-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.music-header-row h4 {
+    font-size: 1.1rem;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+}
+
+.music-header-row p {
+    font-size: 0.88rem;
+    color: var(--mut);
+    line-height: 1.4;
+}
+
+.music-tags {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.music-tags span {
+    font-size: 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--line);
+    padding: 0.15rem 0.6rem;
+    border-radius: 4px;
     color: var(--mut);
 }
 
-.list span {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--mut);
-}
-
-.list a:hover span {
-    color: var(--ink);
+/* Responsive Grid */
+@media (max-width: 850px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* ==========================================================================

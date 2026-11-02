@@ -43,6 +43,10 @@ const translations = {
         // Other Projects
         "projects-subtitle": "Explore My",
         "projects-title": "Other Projects",
+        "tech-projects-header": "Software Development",
+        "music-projects-header": "Music Production",
+        "music-desc-1":
+            "Original electronic dance music track featuring custom synth sound design, mixing, and mastering.",
         "ttt-title": "Ultimate Tic-Tac-Toe",
         "ttt-desc":
             "A strategic twist on the classic game built with JavaScript.",
@@ -100,6 +104,10 @@ const translations = {
         // Other Projects
         "projects-subtitle": "Explora os Meus",
         "projects-title": "Outros Projetos",
+        "tech-projects-header": "Desenvolvimento de Software",
+        "music-projects-header": "Produção Musical",
+        "music-desc-1":
+            "Tema original de música eletrónica com design de som personalizado em sintetizadores, mistura e masterização.",
         "ttt-title": "Ultimate Tic-Tac-Toe",
         "ttt-desc":
             "Uma versão estratégica do jogo clássico construída em JavaScript.",
