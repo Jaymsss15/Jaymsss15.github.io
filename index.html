@@ -6,7 +6,7 @@
         <title>Tiago Marques | Portfolio</title>
         <meta
             name="description"
-            content="Portfolio of Tiago Marques: software developer and audio engineer, creator of the ALMA audio plugin."
+            content="Portfolio of Tiago Marques: software developer and audio engineer, creator of the ALMA and TMVerb audio plugins."
         />
         <link rel="icon" href="./assets/tmlogo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -37,7 +37,9 @@
             >
                 <a href="#profile" data-i18n="nav-home">Home</a>
                 <a href="#about" data-i18n="nav-about">About</a>
-                <a href="#featured-plugin" data-i18n="nav-alma">ALMA Plugin</a>
+                <a href="#featured-plugin" data-i18n="nav-plugins"
+                    >Audio Plugins</a
+                >
                 <a href="#projects" data-i18n="nav-projects">Other Projects</a>
                 <a href="#contact" data-i18n="nav-contact">Contact</a>
             </nav>
@@ -81,8 +83,8 @@
                 <a
                     href="#featured-plugin"
                     onclick="closeMobileMenu()"
-                    data-i18n="nav-alma"
-                    >ALMA Plugin</a
+                    data-i18n="nav-plugins"
+                    >Audio Plugins</a
                 >
                 <a
                     href="#projects"
@@ -102,331 +104,1035 @@
         <main>
             <!-- SECÇÃO HOME / HERO -->
             <section id="profile" class="panel hero">
-                <div class="hero-text">
-                    <h1>Tiago<br />Marques</h1>
-                    <p class="role" data-i18n="role">
-                        Software Developer & Audio Engineer
-                    </p>
+                <div class="hero-main">
+                    <div class="hero-text">
+                        <p class="hero-hello" data-i18n="hero-hello">
+                            Hello, I'm
+                        </p>
+                        <h1 class="hero-name" aria-label="Tiago Marques">
+                            <span class="mask"><span>Tiago</span></span>
+                            <span class="mask"><span>Marques</span></span>
+                        </h1>
+                        <p class="role" data-i18n="role">
+                            Software Developer & Audio Engineer
+                        </p>
+                        <p class="hero-rotator" aria-live="polite">
+                            <span data-i18n="rot-prefix">I build</span>
+                            <span class="rot-window"
+                                ><span class="rot-word"
+                                    >audio plugins</span
+                                ></span
+                            >
+                        </p>
 
-                    <div class="actions-block">
-                        <div class="btns">
-                            <a
-                                class="btn p"
-                                href="#featured-plugin"
-                                data-i18n="cta-work"
-                                >Featured Work</a
-                            >
-                            <a
-                                class="btn s"
-                                href="#contact"
-                                data-i18n="cta-contact"
-                                >Get in Touch</a
-                            >
+                        <div class="actions-block">
+                            <div class="btns">
+                                <a
+                                    class="btn p"
+                                    href="#featured-plugin"
+                                    data-i18n="cta-work"
+                                    >Featured Work</a
+                                >
+                                <a
+                                    class="btn s"
+                                    href="#contact"
+                                    data-i18n="cta-contact"
+                                    >Get in Touch</a
+                                >
+                            </div>
+                            <div class="soc">
+                                <a
+                                    href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                >
+                                    <img
+                                        src="./assets/linkedin.png"
+                                        alt="LinkedIn"
+                                    />
+                                </a>
+                                <a
+                                    href="https://github.com/Jaymsss15"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="GitHub"
+                                >
+                                    <img
+                                        src="./assets/github.png"
+                                        alt="GitHub"
+                                    />
+                                </a>
+                            </div>
                         </div>
-                        <div class="soc">
-                            <a
-                                href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                            >
-                                <img
-                                    src="./assets/linkedin.png"
-                                    alt="LinkedIn"
-                                />
-                            </a>
-                            <a
-                                href="https://github.com/Jaymsss15"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                            >
-                                <img src="./assets/github.png" alt="GitHub" />
-                            </a>
+                    </div>
+
+                    <div class="photo-wrapper">
+                        <div class="photo-frame">
+                            <img
+                                class="photo"
+                                src="./assets/profile-pic.png"
+                                alt="Portrait of Tiago Marques"
+                                width="400"
+                                height="480"
+                            />
                         </div>
                     </div>
                 </div>
 
-                <div class="photo-wrapper">
-                    <img
-                        class="photo"
-                        src="./assets/profile-pic.png"
-                        alt="Portrait of Tiago Marques"
-                        width="400"
-                        height="480"
-                    />
-                </div>
+                <!-- Onda sonora animada (reage ao rato) -->
+                <canvas class="hero-wave" aria-hidden="true"></canvas>
+
+                <!-- Atalhos para o resto do site -->
+                <nav class="hero-links" aria-label="Quick links">
+                    <a
+                        class="hero-link reveal"
+                        href="#featured-plugin"
+                        style="--d: 1"
+                    >
+                        <span class="hl-num">01</span>
+                        <span class="hl-text">
+                            <b data-i18n="nav-plugins">Audio Plugins</b>
+                            <small>ALMA &amp; TMVerb</small>
+                        </span>
+                        <span class="hl-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="hero-link reveal" href="#projects" style="--d: 2">
+                        <span class="hl-num">02</span>
+                        <span class="hl-text">
+                            <b data-i18n="nav-projects">Other Projects</b>
+                            <small data-i18n="hl-projects"
+                                >Software &amp; music</small
+                            >
+                        </span>
+                        <span class="hl-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="hero-link reveal" href="#about" style="--d: 3">
+                        <span class="hl-num">03</span>
+                        <span class="hl-text">
+                            <b data-i18n="nav-about">About</b>
+                            <small data-i18n="hl-about"
+                                >Journey &amp; toolkit</small
+                            >
+                        </span>
+                        <span class="hl-arrow" aria-hidden="true">→</span>
+                    </a>
+                </nav>
             </section>
 
             <!-- SECÇÃO ABOUT -->
-            <section id="about" class="panel">
+            <section id="about" class="panel about">
                 <p class="sub" data-i18n="about-subtitle">Get to know more</p>
                 <h2 data-i18n="about-title">About Me</h2>
-                <div class="cols">
-                    <div>
-                        <h3 data-i18n="edu-title">Education</h3>
-                        <span class="card-subtitle" data-i18n="edu-msc"
-                            >MSc in Sound Design and Music Computing</span
-                        >
-                        <p class="mut" data-i18n="edu-bsc">
-                            BSc in Computer Science and Engineering
-                        </p>
-                    </div>
-                    <div>
-                        <h3 data-i18n="exp-title">Experience</h3>
-                        <span class="card-subtitle" data-i18n="exp-role"
-                            >Game Development & Audio</span
-                        >
-                        <ul class="mini" data-i18n="exp-desc">
-                            <li>Game Dev at NeuroInova</li>
-                            <li>Audio Plugin Dev at Coletivo Criativo</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3 data-i18n="interests-title">Interests</h3>
-                        <span class="card-subtitle" data-i18n="interests-role"
-                            >Music & Audio Tools</span
-                        >
-                        <ul class="mini" data-i18n="interests-desc">
-                            <li>Music Producer</li>
-                            <li>Guitarist in cover & event bands</li>
-                        </ul>
-                    </div>
+
+                <!-- Introdução -->
+                <div class="about-intro">
+                    <p class="about-lead reveal" data-i18n="about-lead">
+                        I build software where <em>code meets sound</em>: from
+                        audio plugins in C++ and JUCE to web apps and games.
+                    </p>
                 </div>
-                <div class="prose">
-                    <p data-i18n="about-p1">
-                        During my BSc internship at
-                        <a
-                            href="https://neuroinova.com/pt/home/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="company-link"
-                            >NeuroInova</a
-                        >, I worked as a Game Developer focusing on modernizing
-                        legacy games from CreateJS to Konva.js. My role involved
-                        conducting research on unit testing tools, debugging,
-                        implementing new levels, and executing the complete
-                        tech-stack conversion of core game mechanics.
-                    </p>
-                    <p data-i18n="about-p2">
-                        Currently, I am focused on the active development of
-                        <a href="#featured-plugin" class="company-link">ALMA</a
-                        >, an audio software project initiated during my
-                        master's internship at
-                        <a
-                            href="https://coletivocriativo.pt/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="company-link"
-                            >Coletivo Criativo</a
-                        >.
-                    </p>
+
+                <div class="about-grid">
+                    <!-- Percurso (timeline) -->
+                    <div class="about-journey">
+                        <h3
+                            class="block-title reveal"
+                            data-i18n="journey-title"
+                        >
+                            Journey
+                        </h3>
+                        <ol class="timeline">
+                            <li class="tl-item is-now reveal" style="--d: 1">
+                                <span class="tl-dot" aria-hidden="true"></span>
+                                <div class="tl-card">
+                                    <span
+                                        class="tl-kicker"
+                                        data-i18n="tl-now-kicker"
+                                        >Now</span
+                                    >
+                                    <h4 data-i18n="tl-now-title">
+                                        Audio Plugin Development
+                                    </h4>
+                                    <p data-i18n="tl-now-desc">
+                                        Developing
+                                        <a
+                                            href="#featured-plugin"
+                                            class="company-link"
+                                            data-plugin-link="alma"
+                                            >ALMA</a
+                                        >
+                                        and
+                                        <a
+                                            href="#featured-plugin"
+                                            class="company-link"
+                                            data-plugin-link="tmverb"
+                                            >TMVerb</a
+                                        >
+                                        in C++ and JUCE, from the DSP engine to
+                                        the interface design and preset system.
+                                    </p>
+                                    <ul class="chips">
+                                        <li>C++</li>
+                                        <li>JUCE</li>
+                                        <li>DSP</li>
+                                    </ul>
+                                </div>
+                            </li>
+
+                            <li class="tl-item reveal" style="--d: 2">
+                                <span class="tl-dot" aria-hidden="true"></span>
+                                <div class="tl-card">
+                                    <span
+                                        class="tl-kicker"
+                                        data-i18n="tl-msc-kicker"
+                                        >Master's · Internship</span
+                                    >
+                                    <h4 data-i18n="edu-msc">
+                                        MSc in Sound Design and Music Computing
+                                    </h4>
+                                    <p class="tl-role" data-i18n="tl-msc-role">
+                                        Audio Plugin Developer at
+                                        <a
+                                            href="https://coletivocriativo.pt/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="company-link"
+                                            >Coletivo Criativo</a
+                                        >
+                                    </p>
+                                    <p data-i18n="tl-msc-desc">
+                                        Started ALMA during my master's
+                                        internship: an all-in-one plugin that
+                                        makes multi-effect processing
+                                        approachable for beginners.
+                                    </p>
+                                </div>
+                            </li>
+
+                            <li class="tl-item reveal" style="--d: 3">
+                                <span class="tl-dot" aria-hidden="true"></span>
+                                <div class="tl-card">
+                                    <span
+                                        class="tl-kicker"
+                                        data-i18n="tl-bsc-kicker"
+                                        >Bachelor's · Internship</span
+                                    >
+                                    <h4 data-i18n="edu-bsc">
+                                        BSc in Computer Science and Engineering
+                                    </h4>
+                                    <p class="tl-role" data-i18n="tl-bsc-role">
+                                        Game Developer at
+                                        <a
+                                            href="https://neuroinova.com/pt/home/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            class="company-link"
+                                            >NeuroInova</a
+                                        >
+                                    </p>
+                                    <ul
+                                        class="tl-points"
+                                        data-i18n="tl-bsc-points"
+                                    >
+                                        <li>
+                                            Modernized legacy games, migrating
+                                            them from CreateJS to Konva.js
+                                        </li>
+                                        <li>
+                                            Converted the full tech stack of the
+                                            core game mechanics
+                                        </li>
+                                        <li>
+                                            Researched unit testing tools,
+                                            debugged and implemented new levels
+                                        </li>
+                                    </ul>
+                                    <ul class="chips">
+                                        <li>JavaScript</li>
+                                        <li>Konva.js</li>
+                                        <li>CreateJS</li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- Coluna lateral -->
+                    <aside class="about-side">
+                        <div class="side-card reveal" style="--d: 2">
+                            <h3 class="block-title" data-i18n="toolkit-title">
+                                Toolkit
+                            </h3>
+                            <div class="tool-group">
+                                <span
+                                    class="tool-label"
+                                    data-i18n="toolkit-audio"
+                                    >Audio &amp; DSP</span
+                                >
+                                <ul class="chips">
+                                    <li>C++</li>
+                                    <li>JUCE</li>
+                                    <li>DSP</li>
+                                    <li>Ableton Live</li>
+                                    <li>Vital</li>
+                                </ul>
+                            </div>
+                            <div class="tool-group">
+                                <span class="tool-label" data-i18n="toolkit-web"
+                                    >Web &amp; Games</span
+                                >
+                                <ul class="chips">
+                                    <li>JavaScript</li>
+                                    <li>HTML / CSS</li>
+                                    <li>Konva.js</li>
+                                    <li>CreateJS</li>
+                                </ul>
+                            </div>
+                            <div class="tool-group">
+                                <span
+                                    class="tool-label"
+                                    data-i18n="toolkit-design"
+                                    >Design</span
+                                >
+                                <ul class="chips">
+                                    <li>Figma</li>
+                                    <li>UI / UX</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="side-card reveal" style="--d: 3">
+                            <h3 class="block-title" data-i18n="interests-title">
+                                Beyond Code
+                            </h3>
+                            <ul class="interest-list">
+                                <li>
+                                    <span
+                                        class="interest-icon"
+                                        aria-hidden="true"
+                                    >
+                                        <span class="eq"
+                                            ><i></i><i></i><i></i><i></i
+                                        ></span>
+                                    </span>
+                                    <div>
+                                        <b data-i18n="int-producer"
+                                            >Music Producer</b
+                                        >
+                                        <small data-i18n="int-producer-desc"
+                                            >Electronic music, sound design,
+                                            mixing &amp; mastering</small
+                                        >
+                                    </div>
+                                </li>
+                                <li>
+                                    <span
+                                        class="interest-icon"
+                                        aria-hidden="true"
+                                    >
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                        >
+                                            <path d="M9 18V5l12-2v13"></path>
+                                            <circle
+                                                cx="6"
+                                                cy="18"
+                                                r="3"
+                                            ></circle>
+                                            <circle
+                                                cx="18"
+                                                cy="16"
+                                                r="3"
+                                            ></circle>
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <b data-i18n="int-guitar">Guitarist</b>
+                                        <small data-i18n="int-guitar-desc"
+                                            >Live in cover &amp; event
+                                            bands</small
+                                        >
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
                 </div>
             </section>
 
-            <!-- SECÇÃO FEATURED PLUGIN (ALMA) -->
-            <section id="featured-plugin" class="panel">
-                <p class="sub" data-i18n="alma-subtitle">Featured Project</p>
-                <h2 data-i18n="alma-title">ALMA Plugin</h2>
-                <div class="alma">
-                    <img
-                        src="./assets/alma.png"
-                        alt="ALMA Processor Plugin Interface"
-                    />
-                    <div>
-                        <p data-i18n="alma-desc">
-                            <strong>ALMA</strong> is an all-in-one audio plugin
-                            developed in C++ and JUCE. Each of its 5 core macro
-                            modules handles a parallel chain of 3 independent
-                            effects, allowing users to toggle, stack, and
-                            fine-tune individual sub-parameters. It features an
-                            adaptive UI layer ("ALMA mode") that translates
-                            standard DSP parameters into intuitive terminology
-                            for beginners. It includes a factory bank and native
-                            custom preset serialization.
-                        </p>
-                        <ul class="tags">
-                            <li>C++</li>
-                            <li>JUCE</li>
-                            <li>DSP</li>
-                            <li>UI/UX (Figma)</li>
-                        </ul>
-                    </div>
+            <!-- SECÇÃO AUDIO PLUGINS (ALMA + TMVerb) -->
+            <section id="featured-plugin" class="panel plugins">
+                <p class="sub" data-i18n="plugins-subtitle">
+                    Featured Projects
+                </p>
+                <h2 data-i18n="plugins-title">Audio Plugins</h2>
+
+                <!-- Seletor de plugin -->
+                <div
+                    class="plugin-switch"
+                    role="tablist"
+                    aria-label="Audio plugins"
+                    data-active="alma"
+                >
+                    <span
+                        class="plugin-switch-indicator"
+                        aria-hidden="true"
+                    ></span>
+                    <button
+                        class="plugin-tab"
+                        id="tab-alma"
+                        role="tab"
+                        aria-selected="true"
+                        aria-controls="plugin-alma"
+                        data-plugin="alma"
+                    >
+                        <span class="plugin-tab-name">ALMA</span>
+                        <span class="plugin-tab-kind" data-i18n="alma-kind"
+                            >All-in-one processor</span
+                        >
+                    </button>
+                    <button
+                        class="plugin-tab"
+                        id="tab-tmverb"
+                        role="tab"
+                        aria-selected="false"
+                        aria-controls="plugin-tmverb"
+                        data-plugin="tmverb"
+                        tabindex="-1"
+                    >
+                        <span class="plugin-tab-name">TMVerb</span>
+                        <span class="plugin-tab-kind" data-i18n="tmverb-kind"
+                            >Algorithmic reverb</span
+                        >
+                    </button>
                 </div>
-                <figure>
-                    <div class="vid">
-                        <iframe
-                            src="https://www.youtube-nocookie.com/embed/nO_8UWvaoDM"
-                            title="ALMA Plugin Showcase Video"
-                            loading="lazy"
-                            allow="encrypted-media; picture-in-picture"
-                            allowfullscreen
-                        ></iframe>
+
+                <!-- ALMA -->
+                <article
+                    id="plugin-alma"
+                    class="plugin-card is-active"
+                    role="tabpanel"
+                    aria-labelledby="tab-alma"
+                >
+                    <div class="alma">
+                        <img
+                            class="plugin-shot"
+                            src="./assets/alma.png"
+                            alt="ALMA Processor Plugin Interface"
+                        />
+                        <div>
+                            <p data-i18n="alma-desc">
+                                <strong>ALMA</strong> is an all-in-one audio
+                                plugin developed in C++ and JUCE. Each of its 5
+                                core macro modules handles a parallel chain of 3
+                                independent effects, allowing users to toggle,
+                                stack, and fine-tune individual sub-parameters.
+                                It features an adaptive UI layer ("ALMA mode")
+                                that translates standard DSP parameters into
+                                intuitive terminology for beginners. It includes
+                                a factory bank and native custom preset
+                                serialization.
+                            </p>
+                            <ul class="tags">
+                                <li>C++</li>
+                                <li>JUCE</li>
+                                <li>DSP</li>
+                                <li>UI/UX (Figma)</li>
+                            </ul>
+                            <ul class="plugin-stats">
+                                <li>
+                                    <span class="stat-num" data-count="5"
+                                        >5</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="alma-stat-1"
+                                        >Macro modules</span
+                                    >
+                                </li>
+                                <li>
+                                    <span class="stat-num" data-count="15"
+                                        >15</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="alma-stat-2"
+                                        >Independent effects</span
+                                    >
+                                </li>
+                                <li>
+                                    <span class="stat-num" data-count="2"
+                                        >2</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="alma-stat-3"
+                                        >UI modes</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <figcaption data-i18n="alma-video-caption">
-                        A music production remake of "Magia" by Pedro Gonçalves,
-                        demonstrating some of the sound shaping capabilities of
-                        the ALMA audio plugin.
-                    </figcaption>
-                </figure>
+                    <figure>
+                        <div class="vid">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/nO_8UWvaoDM"
+                                title="ALMA Plugin Showcase Video"
+                                loading="lazy"
+                                allow="encrypted-media; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <figcaption data-i18n="alma-video-caption">
+                            A music production remake of "Magia" by Pedro
+                            Gonçalves, demonstrating some of the sound shaping
+                            capabilities of the ALMA audio plugin.
+                        </figcaption>
+                    </figure>
+                </article>
+
+                <!-- TMVerb -->
+                <article
+                    id="plugin-tmverb"
+                    class="plugin-card tmverb"
+                    role="tabpanel"
+                    aria-labelledby="tab-tmverb"
+                    hidden
+                >
+                    <div class="tmverb-layout">
+                        <div class="tmverb-shot">
+                            <img
+                                class="plugin-shot"
+                                src="./assets/tmverb.png"
+                                alt="TMVerb reverb plugin interface"
+                                width="596"
+                                height="797"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="tmverb-info">
+                            <p data-i18n="tmverb-desc">
+                                <strong>TMVerb</strong> is an algorithmic stereo
+                                reverb developed in C++ and JUCE, built around a
+                                custom 8-line Feedback Delay Network: all-pass
+                                diffusers feed modulated delay lines with
+                                in-loop high-frequency damping and a Hadamard
+                                feedback matrix, keeping tails dense and smooth
+                                from tight rooms to 20-second ambient washes.
+                                Four main knobs (Pre-Delay, Decay, Tone and Mix)
+                                shape the core sound, while a three-mode XY pad
+                                controls six more parameters in pairs. It ships
+                                with 9 factory presets tuned for mono
+                                compatibility and stability from 44.1 to 96 kHz,
+                                plus custom preset saving.
+                            </p>
+                            <ul class="tags">
+                                <li>C++</li>
+                                <li>JUCE</li>
+                                <li>DSP</li>
+                                <li>FDN Reverb</li>
+                                <li>Custom UI</li>
+                            </ul>
+                            <ul class="plugin-stats">
+                                <li>
+                                    <span class="stat-num" data-count="8"
+                                        >8</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="tmverb-stat-1"
+                                        >Delay lines (FDN)</span
+                                    >
+                                </li>
+                                <li>
+                                    <span class="stat-num" data-count="3"
+                                        >3</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="tmverb-stat-2"
+                                        >XY pad modes</span
+                                    >
+                                </li>
+                                <li>
+                                    <span class="stat-num" data-count="9"
+                                        >9</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="tmverb-stat-3"
+                                        >Factory presets</span
+                                    >
+                                </li>
+                                <li>
+                                    <span
+                                        class="stat-num"
+                                        data-count="20"
+                                        data-suffix=" s"
+                                        >20 s</span
+                                    >
+                                    <span
+                                        class="stat-label"
+                                        data-i18n="tmverb-stat-4"
+                                        >Max decay</span
+                                    >
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Cadeia de sinal -->
+                    <div class="tm-block">
+                        <h3
+                            class="tm-block-title"
+                            data-i18n="tmverb-flow-title"
+                        >
+                            Signal flow
+                        </h3>
+                        <ol class="flow">
+                            <li data-i18n="flow-input">Input</li>
+                            <li>Pre-Delay</li>
+                            <li class="flow-core">FDN ×8</li>
+                            <li>Width</li>
+                            <li>Low Cut · Tone</li>
+                            <li>Ducking · Gate</li>
+                            <li>Mix</li>
+                        </ol>
+                    </div>
+
+                    <!-- Os 3 modos do XY pad (interativos) -->
+                    <div class="tm-block">
+                        <div class="tm-block-head">
+                            <h3
+                                class="tm-block-title"
+                                data-i18n="tmverb-xy-title"
+                            >
+                                One XY pad, three modes
+                            </h3>
+                            <span class="tm-hint" data-i18n="tmverb-xy-hint"
+                                >Drag inside a pad to try it</span
+                            >
+                        </div>
+                        <div class="xy-grid">
+                            <div class="xy-card" data-mode="space">
+                                <div class="xy-pad" aria-hidden="true">
+                                    <span class="xy-dot"></span>
+                                </div>
+                                <h4>SPACE</h4>
+                                <p class="xy-read">
+                                    <span data-x>SIZE 0.90x</span>
+                                    <span data-y>WIDTH 100 %</span>
+                                </p>
+                                <p class="xy-desc" data-i18n="xy-space-desc">
+                                    Room size and stereo width of the tail.
+                                </p>
+                            </div>
+                            <div class="xy-card" data-mode="spectral">
+                                <div class="xy-pad" aria-hidden="true">
+                                    <span class="xy-dot"></span>
+                                </div>
+                                <h4>SPECTRAL</h4>
+                                <p class="xy-read">
+                                    <span data-x>LOW CUT 42 Hz</span>
+                                    <span data-y>DAMPING 40 %</span>
+                                </p>
+                                <p class="xy-desc" data-i18n="xy-spectral-desc">
+                                    Low cut and high-frequency damping inside
+                                    the loop.
+                                </p>
+                            </div>
+                            <div class="xy-card" data-mode="dynamics">
+                                <div class="xy-pad" aria-hidden="true">
+                                    <span class="xy-dot"></span>
+                                </div>
+                                <h4>DYNAMICS</h4>
+                                <p class="xy-read">
+                                    <span data-x>DUCKING 0.0 dB</span>
+                                    <span data-y>GATE Off</span>
+                                </p>
+                                <p class="xy-desc" data-i18n="xy-dynamics-desc">
+                                    Ducks the tail under the dry signal, or
+                                    gates it for 80s-style drums.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
             </section>
 
             <!-- SECÇÃO OTHER PROJECTS & MUSIC -->
-            <section id="projects" class="panel">
-                <p class="sub" data-i18n="projects-subtitle">Explore My</p>
-                <h2 data-i18n="projects-title">Other Projects</h2>
-
-                <div class="projects-grid">
-                    <!-- Coluna de Projetos de Software / IT -->
-                    <div class="project-category">
-                        <h3 class="category-header">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <polyline points="16 18 22 12 16 6"></polyline>
-                                <polyline points="8 6 2 12 8 18"></polyline>
-                            </svg>
-                            <span data-i18n="tech-projects-header"
-                                >Software Development</span
-                            >
-                        </h3>
-                        <ul class="list">
-                            <li>
-                                <a
-                                    href="https://github.com/Jaymsss15/Ultimate-Tic-Tac-Toe"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div>
-                                        <h4 data-i18n="ttt-title">
-                                            Ultimate Tic-Tac-Toe
-                                        </h4>
-                                        <p data-i18n="ttt-desc">
-                                            A strategic twist on the classic
-                                            game built with JavaScript.
-                                        </p>
-                                    </div>
-                                    <span class="external-link">GitHub ↗</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://github.com/Jaymsss15/Real-Estate-Website"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div>
-                                        <h4 data-i18n="re-title">
-                                            Real Estate Website
-                                        </h4>
-                                        <p data-i18n="re-desc">
-                                            Web platform for property listings
-                                            and management.
-                                        </p>
-                                    </div>
-                                    <span class="external-link">GitHub ↗</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://github.com/Jaymsss15/Animals-Game"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    <div>
-                                        <h4 data-i18n="ag-title">
-                                            Animals Game
-                                        </h4>
-                                        <p data-i18n="ag-desc">
-                                            Interactive project focused on core
-                                            game logic.
-                                        </p>
-                                    </div>
-                                    <span class="external-link">GitHub ↗</span>
-                                </a>
-                            </li>
-                        </ul>
+            <section id="projects" class="panel projects">
+                <div class="projects-head">
+                    <div>
+                        <p class="sub" data-i18n="projects-subtitle">
+                            Explore My
+                        </p>
+                        <h2 data-i18n="projects-title">Other Projects</h2>
                     </div>
 
-                    <!-- Coluna de Música e Produção Audio -->
-                    <div class="project-category">
-                        <h3 class="category-header">
-                            <svg
-                                width="20"
-                                height="20"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                            >
-                                <path d="M9 18V5l12-2v13"></path>
-                                <circle cx="6" cy="18" r="3"></circle>
-                                <circle cx="18" cy="16" r="3"></circle>
-                            </svg>
-                            <span data-i18n="music-projects-header"
-                                >Music Production</span
-                            >
-                        </h3>
-
-                        <!-- Player do YouTube Incorporado -->
-                        <div class="audio-player-card youtube-card">
-                            <div class="vid">
-                                <iframe
-                                    src="https://www.youtube-nocookie.com/embed/AyC844FDIXs"
-                                    title="Tiago Marques - Fall For You"
-                                    loading="lazy"
-                                    allow="encrypted-media; picture-in-picture"
-                                    allowfullscreen
-                                ></iframe>
-                            </div>
-                        </div>
-
-                        <!-- Descrição e Detalhes da Música -->
-                        <div class="music-details">
-                            <div class="music-header-row">
-                                <div>
-                                    <p data-i18n="music-desc-1">
-                                        Original electronic dance music track
-                                        featuring custom synth sound design,
-                                        mixing, and mastering.
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="music-tags">
-                                <span>Ableton Live</span>
-                                <span>Vital</span>
-                                <span>Mixing & Mastering</span>
-                            </div>
-                        </div>
+                    <!-- Filtro -->
+                    <div
+                        class="seg filter"
+                        role="group"
+                        aria-label="Filter projects"
+                        data-active="all"
+                    >
+                        <span class="seg-indicator" aria-hidden="true"></span>
+                        <button
+                            class="seg-btn"
+                            data-filter="all"
+                            aria-pressed="true"
+                            data-i18n="filter-all"
+                        >
+                            All
+                        </button>
+                        <button
+                            class="seg-btn"
+                            data-filter="software"
+                            aria-pressed="false"
+                            data-i18n="filter-software"
+                        >
+                            Software
+                        </button>
+                        <button
+                            class="seg-btn"
+                            data-filter="music"
+                            aria-pressed="false"
+                            data-i18n="filter-music"
+                        >
+                            Music
+                        </button>
                     </div>
+                </div>
+
+                <div class="work-grid">
+                    <!-- Música (destaque, ocupa a largura toda) -->
+                    <article
+                        class="work-card work-feature reveal"
+                        data-cat="music"
+                    >
+                        <div class="work-media vid">
+                            <iframe
+                                src="https://www.youtube-nocookie.com/embed/AyC844FDIXs"
+                                title="Tiago Marques - Fall For You"
+                                loading="lazy"
+                                allow="encrypted-media; picture-in-picture"
+                                allowfullscreen
+                            ></iframe>
+                        </div>
+                        <div class="work-body">
+                            <span class="work-kicker">
+                                <span class="eq" aria-hidden="true"
+                                    ><i></i><i></i><i></i><i></i
+                                ></span>
+                                <span data-i18n="music-kicker"
+                                    >Music Production · Original Track</span
+                                >
+                            </span>
+                            <h3>Fall For You</h3>
+                            <p data-i18n="music-desc-1">
+                                Original electronic dance music track featuring
+                                custom synth sound design, mixing, and
+                                mastering.
+                            </p>
+                            <ul class="chips">
+                                <li>Ableton Live</li>
+                                <li>Vital</li>
+                                <li>Mixing &amp; Mastering</li>
+                            </ul>
+                            <a
+                                class="work-link"
+                                href="https://www.youtube.com/@TiagoM_Music"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                ><span data-i18n="music-more"
+                                    >More on YouTube</span
+                                >
+                                <span class="arrow" aria-hidden="true"
+                                    >↗</span
+                                ></a
+                            >
+                        </div>
+                    </article>
+
+                    <!-- Software -->
+                    <a
+                        class="work-card reveal"
+                        style="--d: 1"
+                        data-cat="software"
+                        href="https://github.com/Jaymsss15/Ultimate-Tic-Tac-Toe"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="work-thumb">
+                            <img
+                                src="./assets/project-1.png"
+                                alt="Ultimate Tic-Tac-Toe game board"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="work-body">
+                            <span class="work-kicker" data-i18n="kicker-game"
+                                >Web Game</span
+                            >
+                            <h3 data-i18n="ttt-title">Ultimate Tic-Tac-Toe</h3>
+                            <p data-i18n="ttt-desc">
+                                A strategic twist on the classic game built with
+                                JavaScript.
+                            </p>
+                            <span class="work-link"
+                                >GitHub
+                                <span class="arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </div>
+                    </a>
+
+                    <a
+                        class="work-card reveal"
+                        style="--d: 2"
+                        data-cat="software"
+                        href="https://github.com/Jaymsss15/Real-Estate-Website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="work-thumb">
+                            <img
+                                src="./assets/project-2.png"
+                                alt="HabitAqui real estate website homepage"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="work-body">
+                            <span class="work-kicker" data-i18n="kicker-web"
+                                >Web Platform</span
+                            >
+                            <h3 data-i18n="re-title">Real Estate Website</h3>
+                            <p data-i18n="re-desc">
+                                Web platform for property listings and
+                                management.
+                            </p>
+                            <span class="work-link"
+                                >GitHub
+                                <span class="arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </div>
+                    </a>
+
+                    <a
+                        class="work-card reveal"
+                        style="--d: 3"
+                        data-cat="software"
+                        href="https://github.com/Jaymsss15/Animals-Game"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="work-thumb">
+                            <img
+                                src="./assets/project-3.png"
+                                alt="Animals Game running in a terminal"
+                                loading="lazy"
+                            />
+                        </div>
+                        <div class="work-body">
+                            <span class="work-kicker" data-i18n="kicker-console"
+                                >Console Game</span
+                            >
+                            <h3 data-i18n="ag-title">Animals Game</h3>
+                            <p data-i18n="ag-desc">
+                                Interactive project focused on core game logic.
+                            </p>
+                            <span class="work-link"
+                                >GitHub
+                                <span class="arrow" aria-hidden="true"
+                                    >↗</span
+                                ></span
+                            >
+                        </div>
+                    </a>
                 </div>
             </section>
 
             <!-- SECÇÃO CONTACT -->
-            <section id="contact" class="panel">
-                <h2 data-i18n="contact-title">Contact</h2>
-                <div class="cards">
-                    <a href="mailto:tfam7@live.com.pt">
-                        <small>Email</small>
-                        <b>tfam7@live.com.pt</b>
-                    </a>
-                    <a
-                        href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <small>LinkedIn</small>
-                        <b>Tiago Marques</b>
-                    </a>
+            <section id="contact" class="panel contact">
+                <div class="contact-wrap">
+                    <div class="contact-intro">
+                        <p class="sub reveal" data-i18n="contact-subtitle">
+                            Get in touch
+                        </p>
+                        <h2
+                            class="contact-title reveal"
+                            style="--d: 1"
+                            data-i18n="contact-title"
+                        >
+                            Let's build something that <em>sounds</em> good.
+                        </h2>
+                        <p
+                            class="contact-text reveal"
+                            style="--d: 2"
+                            data-i18n="contact-text"
+                        >
+                            Have a project, a role or an idea in mind? Send me a
+                            message and let's talk.
+                        </p>
+
+                        <div class="email-box reveal" style="--d: 3">
+                            <a class="email-big" href="mailto:tfam7@live.com.pt"
+                                >tfam7@live.com.pt</a
+                            >
+                            <button
+                                class="copy-btn"
+                                type="button"
+                                data-copy="tfam7@live.com.pt"
+                                aria-label="Copy email address"
+                            >
+                                <svg
+                                    class="ic-copy"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <rect
+                                        x="9"
+                                        y="9"
+                                        width="13"
+                                        height="13"
+                                        rx="2"
+                                    ></rect>
+                                    <path
+                                        d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                                    ></path>
+                                </svg>
+                                <svg
+                                    class="ic-check"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    aria-hidden="true"
+                                >
+                                    <polyline
+                                        points="20 6 9 17 4 12"
+                                    ></polyline>
+                                </svg>
+                                <span class="copy-label" data-i18n="copy"
+                                    >Copy</span
+                                >
+                            </button>
+                        </div>
+                    </div>
+
+                    <ul class="channels">
+                        <li class="reveal" style="--d: 2">
+                            <a href="mailto:tfam7@live.com.pt">
+                                <span class="ch-icon"
+                                    ><img src="./assets/email.png" alt=""
+                                /></span>
+                                <span class="ch-text">
+                                    <small>Email</small>
+                                    <b>tfam7@live.com.pt</b>
+                                </span>
+                                <span class="ch-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </a>
+                        </li>
+                        <li class="reveal" style="--d: 3">
+                            <a
+                                href="https://www.linkedin.com/in/tiago-marques-789b3031b/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span class="ch-icon"
+                                    ><img src="./assets/linkedin.png" alt=""
+                                /></span>
+                                <span class="ch-text">
+                                    <small>LinkedIn</small>
+                                    <b>Tiago Marques</b>
+                                </span>
+                                <span class="ch-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </a>
+                        </li>
+                        <li class="reveal" style="--d: 4">
+                            <a
+                                href="https://github.com/Jaymsss15"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span class="ch-icon"
+                                    ><img src="./assets/github.png" alt=""
+                                /></span>
+                                <span class="ch-text">
+                                    <small>GitHub</small>
+                                    <b>Jaymsss15</b>
+                                </span>
+                                <span class="ch-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </a>
+                        </li>
+                        <li class="reveal" style="--d: 5">
+                            <a
+                                href="https://www.youtube.com/@TiagoM_Music"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span class="ch-icon">
+                                    <svg
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                    >
+                                        <rect
+                                            x="2"
+                                            y="5"
+                                            width="20"
+                                            height="14"
+                                            rx="4"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        ></rect>
+                                        <path
+                                            d="M10 9.2v5.6l4.8-2.8z"
+                                            fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </span>
+                                <span class="ch-text">
+                                    <small>YouTube</small>
+                                    <b>@TiagoM_Music</b>
+                                </span>
+                                <span class="ch-arrow" aria-hidden="true"
+                                    >↗</span
+                                >
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </main>
