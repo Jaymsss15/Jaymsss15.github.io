@@ -56,6 +56,15 @@ The TMVerb section includes:
 - **Three playable XY pads** (Space, Spectral, Dynamics) that use the same parameter mappings and defaults as the real plugin. Drag inside a pad to see the values change, or leave it idle and watch it trace a slow Lissajous curve
 - Animated stat counters
 
+### Games
+Showcases the featured desktop game **[Sueca](https://github.com/Jaymsss15/Sueca)** — a classic Portuguese trick-taking card game built from scratch in **Godot 4** (GDScript) for Windows 10/11, supporting English and Portuguese.
+
+The Sueca showcase includes:
+- **Live gameplay preview** showing a 4-player table with realistic table rituals (shuffle, cut, and top/bottom deck dealing to set trump)
+- **Game details & direct actions** with tech tags (`Godot 4`, `GDScript`, `Game AI`, `UI/UX`), a direct **Download for Windows** button, and a link to the GitHub repository
+- **Key game stats** (40 cards, 3 bot players, 120 points per hand, 10 games to a "Moca")
+- **Interactive "How a hand plays out" flow** highlighting the 6 stages of a round (`Shuffle` → `Cut` → `Deal` → `Trump` → `10 tricks` → `Score`)
+
 ### Other Projects
 - Filterable grid (**All / Software / Music**) with a sliding indicator
 - Featured music track ("Fall For You") plus software projects:
