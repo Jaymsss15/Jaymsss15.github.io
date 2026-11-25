@@ -104,6 +104,30 @@ const translations = {
         "ag-title": "Animals Game",
         "ag-desc": "Interactive project focused on core game logic.",
 
+        // Games (Sueca)
+        "nav-games": "Games",
+        "hl-games": "Sueca · card game",
+        "games-subtitle": "Featured Game",
+        "games-title": "Games",
+        "sueca-kind": "Card game · Windows",
+        "sueca-desc":
+            "<strong>Sueca</strong> is the classic Portuguese card game, built from scratch in Godot. You and the bot across the table take on the other pair, following the ritual of a real table: shuffle, cut, and deal from the top or the bottom of the deck to set the trump. Matches go from 1 to 10 games, with traditional <em>capote</em> and <em>bandeira</em> scoring, a hand history and a built-in animated tutorial.",
+        "sueca-tag-ai": "Game AI",
+        "sueca-download": "Download for Windows",
+        "sueca-github": "View on GitHub",
+        "sueca-note": "Free · Windows 10/11 · English &amp; Portuguese",
+        "sueca-stat-1": "Cards in the deck",
+        "sueca-stat-2": "Bot players",
+        "sueca-stat-3": "Points per hand",
+        "sueca-stat-4": "Games to a \"Moca\"",
+        "sueca-flow-title": "How a hand plays out",
+        "sueca-flow-1": "Shuffle",
+        "sueca-flow-2": "Cut",
+        "sueca-flow-3": "Deal",
+        "sueca-flow-4": "Trump",
+        "sueca-flow-5": "10 tricks",
+        "sueca-flow-6": "Score",
+
         // Contact
         "contact-subtitle": "Get in touch",
         "contact-title": "Let's build something that <em>sounds</em> good.",
@@ -217,6 +241,30 @@ const translations = {
         "re-desc": "Plataforma web para listagem e gestão de imóveis.",
         "ag-title": "Jogo dos Animais",
         "ag-desc": "Projeto interativo focado na lógica do jogo.",
+
+        // Games (Sueca)
+        "nav-games": "Jogos",
+        "hl-games": "Sueca · jogo de cartas",
+        "games-subtitle": "Jogo em Destaque",
+        "games-title": "Jogos",
+        "sueca-kind": "Jogo de cartas · Windows",
+        "sueca-desc":
+            "A <strong>Sueca</strong> é o clássico jogo de cartas português, feito de raiz em Godot. Tu e o bot da frente jogam contra a outra dupla, com o ritual de uma mesa a sério: baralhar, partir e dar por cima ou por baixo, o que decide o trunfo. As partidas vão de 1 a 10 jogos, com a pontuação tradicional de <em>capote</em> e <em>bandeira</em>, histórico da mão e um tutorial animado integrado.",
+        "sueca-tag-ai": "IA de jogo",
+        "sueca-download": "Download para Windows",
+        "sueca-github": "Ver no GitHub",
+        "sueca-note": "Grátis · Windows 10/11 · Português e Inglês",
+        "sueca-stat-1": "Cartas no baralho",
+        "sueca-stat-2": "Jogadores bot",
+        "sueca-stat-3": "Pontos por mão",
+        "sueca-stat-4": "Jogos para uma \"Moca\"",
+        "sueca-flow-title": "Como corre uma mão",
+        "sueca-flow-1": "Baralhar",
+        "sueca-flow-2": "Partir",
+        "sueca-flow-3": "Dar",
+        "sueca-flow-4": "Trunfo",
+        "sueca-flow-5": "10 vazas",
+        "sueca-flow-6": "Pontuação",
 
         // Contact
         "contact-subtitle": "Fala comigo",

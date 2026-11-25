@@ -15,6 +15,12 @@
     --tm-magenta: #b65aa6;
     --tm-violet: #8e4a9c;
     --tm-lilac: #e0dcff;
+
+    /* Cores da Sueca (feltro verde e dourado do jogo) */
+    --su-felt: #1f4a2b;
+    --su-felt-dark: #12301b;
+    --su-gold: #f2b62a;
+    --su-gold-soft: rgba(242, 182, 42, 0.45);
 }
 
 [hidden] {
@@ -521,7 +527,7 @@ h3 {
 /* Atalhos */
 .hero-links {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 1rem;
 }
 
@@ -2121,6 +2127,238 @@ footer {
     font-size: 0.85rem;
     border-top: 1px solid var(--line);
     margin-top: auto;
+}
+
+/* ==========================================================================
+   GAMES: SUECA
+   ========================================================================== */
+.games {
+    position: relative;
+}
+
+/* Brilho verde de feltro por trás da secção */
+.games::before {
+    content: "";
+    position: absolute;
+    inset: -2rem 0 auto;
+    height: 560px;
+    pointer-events: none;
+    z-index: -1;
+    background: radial-gradient(
+        640px 340px at 50% 30%,
+        rgba(47, 120, 70, 0.22),
+        transparent 70%
+    );
+}
+
+.game-card {
+    animation: pluginIn 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.game-hero {
+    max-width: 960px;
+    margin: 0 auto;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(242, 182, 42, 0.25);
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        0 0 0 6px rgba(31, 74, 43, 0.35);
+}
+
+.game-hero img,
+.game-shot img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.game-hero:hover img,
+.game-shot:hover img {
+    transform: scale(1.02);
+}
+
+.game-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 3rem;
+    align-items: center;
+    max-width: 960px;
+    margin: 3.5rem auto 0;
+}
+
+.game-id {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.game-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.game-id:hover .game-icon {
+    transform: rotate(-4deg) scale(1.05);
+}
+
+.game-id h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: var(--su-gold);
+}
+
+.game-kind {
+    font-size: 0.8rem;
+    color: var(--mut);
+}
+
+.game-info p {
+    color: var(--mut);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.game-info strong {
+    color: var(--ink);
+}
+
+.game-info em {
+    color: var(--ink);
+    font-style: italic;
+}
+
+.game-info .tags {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.game-btns {
+    margin: 1.6rem 0 0.8rem;
+}
+
+/* Botão de download em dourado, como os botões do jogo */
+.sueca .btn.p {
+    background: var(--su-gold);
+    border-color: var(--su-gold);
+    color: #1a1404;
+}
+
+.sueca .btn.p:hover {
+    background: #ffc94a;
+    box-shadow: 0 0 22px var(--su-gold-soft);
+}
+
+.sueca .btn.s:hover {
+    border-color: var(--su-gold);
+}
+
+.game-note {
+    font-size: 0.8rem !important;
+    color: var(--mut);
+}
+
+.game-shot {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.sueca .plugin-stats {
+    max-width: 960px;
+    margin-top: 3rem;
+}
+
+.sueca .plugin-stats li:hover {
+    border-color: var(--su-gold-soft);
+}
+
+.sueca .stat-num {
+    color: var(--su-gold);
+}
+
+.sueca .tm-block {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Fluxo da mão em verde e dourado */
+.sueca .flow::before {
+    background: linear-gradient(
+        90deg,
+        rgba(242, 182, 42, 0.08),
+        rgba(242, 182, 42, 0.5),
+        rgba(242, 182, 42, 0.08)
+    );
+}
+
+.sueca .flow::after {
+    background: radial-gradient(
+        closest-side,
+        #fff,
+        rgba(242, 182, 42, 0.85) 40%,
+        transparent
+    );
+}
+
+.sueca .flow li {
+    background: var(--su-felt-dark);
+    border-color: rgba(242, 182, 42, 0.2);
+}
+
+.sueca .flow li:hover {
+    border-color: var(--su-gold);
+}
+
+.sueca .flow .flow-core {
+    background: linear-gradient(135deg, var(--su-gold), #c98a12);
+    border-color: rgba(255, 230, 160, 0.6);
+    color: #1a1404;
+    box-shadow: 0 0 22px var(--su-gold-soft);
+}
+
+@media (max-width: 1100px) {
+    .hero-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .game-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2.5rem;
+    }
+
+    .sueca .plugin-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .sueca .flow::before {
+        background: linear-gradient(
+            180deg,
+            rgba(242, 182, 42, 0.08),
+            rgba(242, 182, 42, 0.5),
+            rgba(242, 182, 42, 0.08)
+        );
+    }
+}
+
+@media (max-width: 800px) {
+    .game-id {
+        justify-content: flex-start;
+    }
+
+    .sueca .game-btns {
+        justify-content: flex-start;
+    }
 }
 
 /* ==========================================================================

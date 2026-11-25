@@ -40,6 +40,7 @@
                 <a href="#featured-plugin" data-i18n="nav-plugins"
                     >Audio Plugins</a
                 >
+                <a href="#games" data-i18n="nav-games">Games</a>
                 <a href="#projects" data-i18n="nav-projects">Other Projects</a>
                 <a href="#contact" data-i18n="nav-contact">Contact</a>
             </nav>
@@ -85,6 +86,12 @@
                     onclick="closeMobileMenu()"
                     data-i18n="nav-plugins"
                     >Audio Plugins</a
+                >
+                <a
+                    href="#games"
+                    onclick="closeMobileMenu()"
+                    data-i18n="nav-games"
+                    >Games</a
                 >
                 <a
                     href="#projects"
@@ -197,8 +204,18 @@
                         </span>
                         <span class="hl-arrow" aria-hidden="true">→</span>
                     </a>
-                    <a class="hero-link reveal" href="#projects" style="--d: 2">
+                    <a class="hero-link reveal" href="#games" style="--d: 2">
                         <span class="hl-num">02</span>
+                        <span class="hl-text">
+                            <b data-i18n="nav-games">Games</b>
+                            <small data-i18n="hl-games"
+                                >Sueca · card game</small
+                            >
+                        </span>
+                        <span class="hl-arrow" aria-hidden="true">→</span>
+                    </a>
+                    <a class="hero-link reveal" href="#projects" style="--d: 3">
+                        <span class="hl-num">03</span>
                         <span class="hl-text">
                             <b data-i18n="nav-projects">Other Projects</b>
                             <small data-i18n="hl-projects"
@@ -207,8 +224,8 @@
                         </span>
                         <span class="hl-arrow" aria-hidden="true">→</span>
                     </a>
-                    <a class="hero-link reveal" href="#about" style="--d: 3">
-                        <span class="hl-num">03</span>
+                    <a class="hero-link reveal" href="#about" style="--d: 4">
+                        <span class="hl-num">04</span>
                         <span class="hl-text">
                             <b data-i18n="nav-about">About</b>
                             <small data-i18n="hl-about"
@@ -764,6 +781,143 @@
                                 </p>
                             </div>
                         </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- SECÇÃO GAMES (Sueca) -->
+            <section id="games" class="panel games">
+                <p class="sub" data-i18n="games-subtitle">Featured Game</p>
+                <h2 data-i18n="games-title">Games</h2>
+
+                <article class="game-card sueca">
+                    <!-- Captura grande da partida -->
+                    <div class="game-hero">
+                        <img
+                            src="./assets/sueca-gameplay.png"
+                            alt="Sueca gameplay: the player's hand at the bottom of a green felt table, with three opponents around it"
+                            width="1600"
+                            height="900"
+                            loading="lazy"
+                        />
+                    </div>
+
+                    <div class="game-layout">
+                        <div class="game-info">
+                            <div class="game-id">
+                                <img
+                                    class="game-icon"
+                                    src="./assets/sueca-icon.png"
+                                    alt=""
+                                    width="72"
+                                    height="72"
+                                    loading="lazy"
+                                />
+                                <div>
+                                    <h3>Sueca</h3>
+                                    <span
+                                        class="game-kind"
+                                        data-i18n="sueca-kind"
+                                        >Card game · Windows</span
+                                    >
+                                </div>
+                            </div>
+                            <p data-i18n="sueca-desc">
+                                <strong>Sueca</strong> is the classic Portuguese
+                                card game, built from scratch in Godot. You and
+                                the bot across the table take on the other pair,
+                                following the ritual of a real table: shuffle,
+                                cut, and deal from the top or the bottom of the
+                                deck to set the trump. Matches go from 1 to 10
+                                games, with traditional <em>capote</em> and
+                                <em>bandeira</em> scoring, a hand history and a
+                                built-in animated tutorial.
+                            </p>
+                            <ul class="tags">
+                                <li>Godot 4</li>
+                                <li>GDScript</li>
+                                <li data-i18n="sueca-tag-ai">Game AI</li>
+                                <li>UI/UX</li>
+                            </ul>
+                            <div class="btns game-btns">
+                                <a
+                                    class="btn p"
+                                    href="https://github.com/Jaymsss15/Sueca/releases/latest"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    ><span data-i18n="sueca-download"
+                                        >Download for Windows</span
+                                    ></a
+                                >
+                                <a
+                                    class="btn s"
+                                    href="https://github.com/Jaymsss15/Sueca"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    ><span data-i18n="sueca-github"
+                                        >View on GitHub</span
+                                    >
+                                    ↗</a
+                                >
+                            </div>
+                            <p class="game-note" data-i18n="sueca-note">
+                                Free · Windows 10/11 · English &amp; Portuguese
+                            </p>
+                        </div>
+
+                        <div class="game-shot">
+                            <img
+                                src="./assets/sueca-menu.png"
+                                alt="Sueca main menu"
+                                width="1600"
+                                height="900"
+                                loading="lazy"
+                            />
+                        </div>
+                    </div>
+
+                    <ul class="plugin-stats">
+                        <li>
+                            <span class="stat-num" data-count="40">40</span>
+                            <span class="stat-label" data-i18n="sueca-stat-1"
+                                >Cards in the deck</span
+                            >
+                        </li>
+                        <li>
+                            <span class="stat-num" data-count="3">3</span>
+                            <span class="stat-label" data-i18n="sueca-stat-2"
+                                >Bot players</span
+                            >
+                        </li>
+                        <li>
+                            <span class="stat-num" data-count="120">120</span>
+                            <span class="stat-label" data-i18n="sueca-stat-3"
+                                >Points per hand</span
+                            >
+                        </li>
+                        <li>
+                            <span class="stat-num" data-count="10">10</span>
+                            <span class="stat-label" data-i18n="sueca-stat-4"
+                                >Games to a "Moca"</span
+                            >
+                        </li>
+                    </ul>
+
+                    <!-- Como corre uma mão -->
+                    <div class="tm-block">
+                        <h3 class="tm-block-title" data-i18n="sueca-flow-title">
+                            How a hand plays out
+                        </h3>
+                        <ol class="flow">
+                            <li data-i18n="sueca-flow-1">Shuffle</li>
+                            <li data-i18n="sueca-flow-2">Cut</li>
+                            <li data-i18n="sueca-flow-3">Deal</li>
+                            <li class="flow-core" data-i18n="sueca-flow-4">
+                                Trump
+                            </li>
+                            <li data-i18n="sueca-flow-5">10 tricks</li>
+                            <li data-i18n="sueca-flow-6">Score</li>
+                        </ol>
                     </div>
                 </article>
             </section>
